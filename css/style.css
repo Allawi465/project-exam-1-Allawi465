@@ -133,7 +133,8 @@ main {
 
 .post-container {
     display: flex;
-    scroll-behavior: smooth;
+   align-items: center;
+   justify-content: center;
 }
 
 .post-card {
