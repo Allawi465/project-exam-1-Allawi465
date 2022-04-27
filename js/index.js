@@ -11,14 +11,23 @@ const navOpenClos = () => {
 
 navOpenClos();
 
-let postSlides = document.querySelectorAll(".post-card")
-let fourSlides = 0;
-const preBtn = document.querySelector(".pre-btn");
-const nestBtn = document.querySelector(".nest-btn");
+const prevBtn = document.querySelector(".pre-btn");
+const nextBtn = document.querySelector(".next-btn");
 
-console.log(preBtn)
-console.log(nestBtn)
 
-const totalSlides = postSlides.length;
 
-console.log(totalSlides);
+
+
+
+
+function next() {
+    console.log("heiii")
+};
+
+nextBtn.onclick = next;
+
+function prev() {
+    console.log("heiii")
+};
+
+prevBtn.onclick = prev;
