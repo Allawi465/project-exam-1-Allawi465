@@ -66,9 +66,9 @@ nav li {
     transition: transform 0.5s ease-in;
     font-size: 14px;
 }
-  
-.nav_link:hover {
-    color: #263D46;
+
+.top-nav {
+    display: flex;
 }
   
 .hamburger div{
@@ -77,6 +77,10 @@ nav li {
     background-color: rgb(0, 0, 0);
     margin: 5px;
     transition: all 0.3s ease;
+}
+
+.heart {
+    font-size: 25px;
 }
   
 .hamburger {
@@ -117,7 +121,7 @@ main {
 }
 
 .card {
-    width: 220px;
+    width: 217px;
     height: 300px;
     padding-bottom: 15px;
 } 
@@ -141,7 +145,7 @@ main {
     top: 54%; left: 20px;
 }
 
-#post-hide {
+#post-hide, #nav-hide {
     display: none;
 }
 
@@ -171,10 +175,6 @@ footer {
     font-size: 14px;
     display: inline-block;
     height: 35px;
-}
-
-.footer_link:hover, .social-links a:hover {
-    color: #375560;
 }
 
 .social-links a {
@@ -228,7 +228,7 @@ footer {
         color: #ffffff;
     }
     
-    .hamburger {
+    .hamburger, .heart {
         display: none;
     }
     
@@ -248,18 +248,21 @@ footer {
     /*  Main style  */
 
     .slider-container {
-        width: 930px;
+        width: 917px;
         position: relative;
         display: block;
     }
     
     .slider-inside {
+        height: 320px;
         overflow: hidden;
     }
     
     .slider-card {
         display: inline-flex;
         transition: transform 0.3s ease-in-out;
+        position: relative;
+        top: 10px;
     }
     
     .card {
@@ -273,6 +276,10 @@ footer {
         z-index: unset;
     }
 
+    #post-hide, #nav-hide {
+        display: unset;
+    }
+
     .post-content {
         transition: transform 500ms ease;
         transform: translateY(65%);
@@ -281,14 +288,18 @@ footer {
     .arrows button {
         border: none;
         display: unset;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+        background: unset;
+        border-radius: 10px;
         position: absolute;
         top: 50%;
         transform: translatey(-50%);
-        width: 30px;
+        cursor: pointer;
+        transition: 0.4s ease;
     } 
+
+    .arrows button:hover {
+        background-color: rgba(0,0,0,0.4);
+    }
     
     .next-btn {
         right: 0;
@@ -304,10 +315,18 @@ footer {
 
 @media (hover) {
 
+    .nav_link:hover {
+        color: #263D46;
+    }
+
+    .footer_link:hover, .social-links a:hover {
+        color: #375560;
+    }
+      
     .post:hover {
         transform: scale(1.05);
     }
-
+    
     .post:hover .post-content, 
     .post:focus-within .post-content  {
         transform: translateY(0);
