@@ -11,14 +11,8 @@ const navOpenClos = () => {
 
 navOpenClos();
 
-const prevBtn = document.querySelector(".pre-btn");
+/* const prevBtn = document.querySelector(".pre-btn");
 const nextBtn = document.querySelector(".next-btn");
-
-
-
-
-
-
 
 function next() {
     console.log("heiii")
@@ -30,4 +24,4 @@ function prev() {
     console.log("heiii")
 };
 
-prevBtn.onclick = prev;
+prevBtn.onclick = prev; */
