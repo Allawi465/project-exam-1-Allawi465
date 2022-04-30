@@ -13,10 +13,10 @@ navOpenClos();
 
 
 
-const slidesCard   = document.querySelectorAll(".card")
+/* const slidesCard   = document.querySelectorAll(".card")
 const prevBtn = document.querySelector(".pre-btn");
 const nextBtn = document.querySelector(".next-btn");
-let counter = 0;
+let counter = 0; */
 
 
 /* slidesCard.forEach(function(card, index){
@@ -45,8 +45,7 @@ slidesCard.forEach(function(card, index){
 
 
 
-
-slidesCard.forEach(function(card, index){
+/* slidesCard.forEach(function(card, index){
     card.style.left = `${index * 97.8}%`;
 }); 
 
@@ -76,4 +75,4 @@ function slides() {
     });
 }
 
-prevBtn.style.display = "none"
+prevBtn.style.display = "none" */
