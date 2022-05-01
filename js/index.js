@@ -11,91 +11,41 @@ const navOpenClos = () => {
 
 navOpenClos();
 
-const carousel   = document.querySelector(".slider-container")
+const slider   = document.querySelector(".slider-container")
 const movingCard   = document.querySelector(".card-slider")
 const prevBtn = document.querySelector(".pre-btn");
 const nextBtn = document.querySelector(".next-btn");
 
-let widthCard = carousel.offsetWidth;
+let widthCard = slider.offsetWidth;
 let counter = 0;
 
-
-
 window.addEventListener("resize", function() {
-    widthCard = carousel.offsetWidth
+    widthCard = slider.offsetWidth
 });
-
 
 nextBtn.addEventListener("click", function () {
     counter++; 
-    movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
-    console.log(movingCard)
-});
+    prevBtn.style.display = "block" 
 
-prevBtn.addEventListener("click", function () {
-    counter = counter - 1; 
-    movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
-}); 
+    movingCard.style.transform = "translateX(" + counter * -widthCard + "px)";
 
-/* slidesCard.forEach(function(card, index){
-    if (window.innerWidth > 1050) {
-        card.style.left = `${index * 25}%`;
-        console.log("25")
-    } 
-    if (window.innerWidth < 1050) {
-        card.style.left = `${index * 97.8}%`;
-        console.log("100")
-    } 
-})
-
-slidesCard.forEach(function(card, index){
-    window.addEventListener("reset", function() {
-        if (window.innerWidth > 1050) {
-            card.style.left = `${index * 25}%`;
-            console.log("25")
-        } 
-        if (window.innerWidth < 1050) {
-            card.style.left = `${index * 97.8}%`;
-            console.log("100")
-        } 
-    })
-}) */
-
-
-/* const slidesCard   = document.querySelectorAll(".card")
-const prevBtn = document.querySelector(".pre-btn");
-const nextBtn = document.querySelector(".next-btn");
-let counter = 0; 
-
-slidesCard.forEach(function(card, index){
-    card.style.left = `${index * 97.8}%`;
-}); 
-
-nextBtn.addEventListener("click", function () {
-    counter++;
-    slides()
-});
-
-prevBtn.addEventListener("click", function () {
-    counter--;
-    slides()
-});
-
-function slides() {
-    if (counter < slidesCard.length - 1 ) {
-        nextBtn.style.display = "block";
-    } else {
+    if (movingCard.offsetWidth - counter * widthCard < counter * widthCard) {
         nextBtn.style.display = "none";
     }
-    if (counter > 0 ) {
-        prevBtn.style.display = "block";
-    } else {
+    
+});
+
+prevBtn.addEventListener("click", function () {
+
+    counter--; 
+
+    nextBtn.style.display = "block";
+    
+    if (counter === 0) {
         prevBtn.style.display = "none";
-    } 
-    slidesCard.forEach(function(card){
-        card.style.transform = `translateX(-${counter * 100}%)`;
-    });
-}
+    }
 
-prevBtn.style.display = "none" */
+    movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
+}); 
 
+prevBtn.style.display = "none";
