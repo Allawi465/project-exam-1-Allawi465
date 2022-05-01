@@ -11,13 +11,31 @@ const navOpenClos = () => {
 
 navOpenClos();
 
-
-
-/* const slidesCard   = document.querySelectorAll(".card")
+const carousel   = document.querySelector(".slider-container")
+const movingCard   = document.querySelector(".card-slider")
 const prevBtn = document.querySelector(".pre-btn");
 const nextBtn = document.querySelector(".next-btn");
-let counter = 0; */
 
+let widthCard = carousel.offsetWidth;
+let counter = 0;
+
+
+
+window.addEventListener("resize", function() {
+    widthCard = carousel.offsetWidth
+});
+
+
+nextBtn.addEventListener("click", function () {
+    counter++; 
+    movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
+    console.log(movingCard)
+});
+
+prevBtn.addEventListener("click", function () {
+    counter = counter - 1; 
+    movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
+}); 
 
 /* slidesCard.forEach(function(card, index){
     if (window.innerWidth > 1050) {
@@ -44,8 +62,12 @@ slidesCard.forEach(function(card, index){
 }) */
 
 
+/* const slidesCard   = document.querySelectorAll(".card")
+const prevBtn = document.querySelector(".pre-btn");
+const nextBtn = document.querySelector(".next-btn");
+let counter = 0; 
 
-/* slidesCard.forEach(function(card, index){
+slidesCard.forEach(function(card, index){
     card.style.left = `${index * 97.8}%`;
 }); 
 
@@ -76,3 +98,4 @@ function slides() {
 }
 
 prevBtn.style.display = "none" */
+
