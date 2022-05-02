@@ -118,21 +118,67 @@ main {
     min-height: 65vh;
 }
 
-#nav-hide, .arrows, #card-hide  {
+.nav-hide {
     display: none;
 }
 
-.card, #card-hide {
-    height: 350px;
-    width: 240px;
-    margin-bottom: 20px;
+/* carousel style  */
+
+.slider-container {
+    width: 560px;
+    position: relative;
+    top: 10px;
+    margin: 20px auto;
+    height: 400px;
+    overflow: hidden;
+    right: 20px;
+}
+
+.inner-slider {
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    top: 10px;
 }
 
 .card-slider {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    display: inline-flex;
+    flex-wrap: unset;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    gap: 1px;
+}
+
+.card {
+    height: 350px;
+    width: 266px;
+    transition: all 0.45s ease-in-out;
+    margin-left: 12px;
+}
+
+.arrows button {
+    border: none;
+    display: block;
+    background: unset;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    cursor: pointer;
+    transition: 0.4s ease;
+    font-size: 10px;
+    height: 50px;
+    padding: 10px;
+    opacity: 0.5;
+}
+
+.next-btn {
+    right: 0; 
+    margin-right: 23px;
+}
+
+.pre-btn {
+    margin-left: 22px;
 }
 
 .post {
@@ -266,74 +312,39 @@ footer {
         font-size: 17px;
     }
 
+    .nav-hide {
+        display: block;
+    }
+
     /*  Main style  */
+
+    /* carousel style  */
 
     .slider-container {
         width: 1050px;
-        position: relative;
-        top: 10px;
-        margin: 20px auto;
-        height: 400px;
-        overflow: hidden;
-        right: 20px;
-    }
-    
-    .inner-slider {
-        width: 100%;
-        height: 360px;
-        position: absolute;
-        top: 10px;
-    }
-    
-    .card-slider {
-        display: inline-flex;
-        flex-wrap: unset;
-        height: 100%;
-        transition: transform 0.5s ease-in-out;
-        gap: 1px;
     }
 
-    .card, #card-hide {
-        height: 350px;
+    .card {
         width: 250px;
-        transition: all 0.45s ease-in-out;
         margin-left: 11px;
     }
     
-    #nav-hide, .arrows, #card-hide {
-        display: unset;
-    }
-    
-    .arrows button {
-        border: none;
-        display: block;
-        background: unset;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        transform: translatey(-50%);
-        cursor: pointer;
-        transition: 0.4s ease;
-        font-size: 10px;
-        height: 50px;
-        padding: 10px;
-        opacity: 0.5;
-    }
-    
-    .next-btn {
-        right: 0; 
-        margin-right: 23px;
-    }
-    
-    .pre-btn {
-        margin-left: 22px;
-    }
-
     /* Footer style */
 
     .footer_link {
         margin-left: 50px;
         font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .slider-container {
+        width: 279px;
+    }
+
+    .card {
+        width: 266px;
+        margin-left: 11px;
     }
 }
 
