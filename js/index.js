@@ -19,7 +19,7 @@ const nextBtn = document.querySelector(".next-btn");
 let widthCard = slider.offsetWidth;
 let counter = 0;
 
-console.log(widthCard)
+/* console.log(widthCard) */
 
 window.addEventListener("resize", function() {
     widthCard = slider.offsetWidth
