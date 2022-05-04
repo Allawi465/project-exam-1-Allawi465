@@ -26,10 +26,11 @@ function getPosts(posts) {
 
         postontainer.innerHTML += `<div class="card">
                                         <div class="post"> 
+                                        <div class="background-image" style="background-image: url('${posts[i].acf.image}')"></div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${posts[i].title.rendered}</h3>
-                                                <p>${posts[i].acf.Paragraph}</p>
-                                                <a href="#">show post</a>
+                                                <p class="post-paragf">${posts[i].acf.Paragraph}</p>
+                                                <a href="#" class="post-link">show post</a>
                                             </div>
                                         </div>
                                     </div>`;
