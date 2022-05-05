@@ -24,10 +24,10 @@ header {
 .logo {
     text-transform: uppercase;
     color: #000000;
-    margin-left: 80px;
+    margin-left: 20px;
     text-decoration: none;
     font-size: 35px;
-    color: #7F2C2C;
+    color: #2C464F;
 }
   
 nav {
@@ -115,11 +115,6 @@ nav li {
 
 /* Main style  */
 
-main {
-    padding: 1rem;
-    min-height: 65vh;
-}
-
 .nav-hide {
     display: none;
 }
@@ -147,9 +142,26 @@ main {
     color: #ffffff;
 }
 
-.middle-main {
+.about-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.about-backround {
     width: 100%;
-    margin: 0 auto;
+    height: 246px;
+    background-image: url(/images/About.jpg);
+    background-size: cover;
+}
+
+.about-field {
+    width: 345px;
+    height: 246px;
+    background-color: #ffffff;
 }
 
 .middle-container {
@@ -159,19 +171,40 @@ main {
     justify-content: space-evenly;
 }
 
+.inner-section {
+    width: 380px;
+    border-radius: 10px;
+}
+
+.middle-box  {
+    position: relative;
+    height: 375px;
+    border-radius: 10px;
+    background-image: url(/images/contact.jpg);
+    cursor: pointer;
+    background-size: cover;
+    margin-bottom: 50px;
+}
+
+#favorite {
+    background-image: url(/images/Favorite.jpg);
+}
+
 .h4-main {
     display: flex;
-    justify-content: center;
-    font-size: 18px;
+    font-size: 24px;
+    color: #2C464F;
+    justify-content: left;
+    padding-left: 20px;
 } 
 
 .contact-content {
     position: absolute;
     top: 80%;
     width: 100%;
-    height: 65px;
-    background-color: #f2f0eba6;
-    border-radius: 10px;
+    height: 77px;
+    background-color: #F2F0EB;
+    border-radius: 2px;
 }
 
 .contact-contents {
@@ -181,35 +214,42 @@ main {
 }
 
 .contents-h5 {
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
-    bottom: 31px;
-    color: #000000;
+    font-weight: bolder;
+    bottom: 20px;
+    color: #2C464F;
     text-transform: uppercase;
 }
 
 .contents-link {
-    position: relative;
-    top: 2px;
-    text-decoration: none;
-    color: #000000;
-    font-size: 18px;
-    text-transform: capitalize;
+  display: inline-block;  
+  font-size: 20px;
+  text-decoration: none;
+  height: 21px;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+  top: 8px;
+  line-height: 1em;
+  padding-left:  1em;
+  padding-right: 1em;
+  background: #7f2c2c;
+  color: rgb(255, 255, 255);
 }
 
-.middle-box  {
-    position: relative;
-    width: 350px;
-    height: 325px;
-    border-radius: 10px;
-    background-image: url(/images/contact.jpg);
-    cursor: pointer;
-    background-size: cover;
-}
+.contents-link:after {
+  content: "";
+  position: absolute;
+  border-bottom: 10px solid transparent;
+  border-top: 11px solid transparent;
+  height: 0px;
+  width: 0px;
+  margin-right: -11px;
+  right: 0; 
+  border-left: 11px solid #7F2C2C;
+} 
 
-#favorite {
-    background-image: url(/images/Favorite.jpg);
-}
 
 /* carousel style  */
 
@@ -218,7 +258,7 @@ main {
     font-size: 22px;
     justify-content: center;
     text-transform: uppercase;
-    color: #2C464F;
+    color: #7F2C2C;
 }
 
 .slider-container {
@@ -418,9 +458,8 @@ footer {
         font-size: 30px;
     }
 
-    .middle-main {
-        width: 70%;
-        margin: 0 auto;
+    .inner-section {
+        width: 500px;
     }
 
     /* carousel style  */
@@ -442,6 +481,8 @@ footer {
     }
 }
 
+/* carousel media  */
+
 @media screen and (max-width: 875px) {
     .slider-container {
         width: 560px;
@@ -461,6 +502,8 @@ footer {
         margin-left: 11px;
     }
 }
+
+/* media on hover  */
 
 @media (hover) {
 
@@ -492,7 +535,7 @@ footer {
 
     .contact-contents > *:not(.contents-h5) {
         opacity: 0;
-        transition: opacity 300ms linear;
+        transition: opacity 500ms linear;
     }
 
     .middle-box:hover .contact-contents > *:not(.contents-h5),
@@ -502,14 +545,14 @@ footer {
     } 
 
     .contact-contents > *:not(.contents-h5)  {
-        transform: translateY(20%);
-        transition: transform 500ms ease;
+        transform: translatex(-60%);
+        transition: transform 300ms ease;
     }
 
     .middle-box:hover .contact-contents > *:not(.contents-h5),
     .middle-box:focus-within .contact-contents {
-        transform: translateY(0);
-        transition: transform 500ms ease;
+        transform: translatex(0);
+        transition: transform 300ms ease;
     }
 
     .nav_link:hover {
