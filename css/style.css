@@ -8,7 +8,7 @@ body {
 /* Header style */
 
 header {
-    height: 115px;
+    height: 90px;
 }
   
 .topHeader {
@@ -17,22 +17,22 @@ header {
     align-items: center;
     box-sizing: border-box;
     justify-content: space-between;
-    height: 115px;
+    height: 90px;
     background: #F2F0EB;
 }
 
 .logo {
     text-transform: uppercase;
     color: #000000;
-    margin-left: 20px;
+    margin-left: 80px;
     text-decoration: none;
-    font-size: 25px;
-    color: #2C464F;
+    font-size: 35px;
+    color: #7F2C2C;
 }
   
 nav {
     position: absolute;
-    top: 110px;
+    top: 90px;
     background-color: #F2F0EB;
     display: none;
     flex-direction: column;
@@ -89,7 +89,7 @@ nav li {
 
 .heart-link {
     text-decoration: none;
-    color: #953535;
+    color: #7F2C2C;
 }
   
 .hamburger {
@@ -100,16 +100,17 @@ nav li {
   
 .burger .first {
     transform: rotate(-45deg) translate(-5px, 6px);
-    background-color: rgb(0, 0, 0);
+    background-color: #7F2C2C;
 }
 
 .burger .second {
     opacity: 0;
+    background-color: #7F2C2C;
 }
 
 .burger .third {
     transform: rotate(45deg) translate(-5px, -6px);
-    background-color: rgb(0, 0, 0);
+    background-color: #7F2C2C;
 }
 
 /* Main style  */
@@ -142,33 +143,72 @@ main {
     color: #000000;
     font-size: 20px;
     padding: 10px 30px 10px;
-    background-color: #953535;
+    background-color: #7F2C2C;
     color: #ffffff;
 }
 
-.footer-main {
-    gap: 20px;
+.middle-main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.middle-container {
+    gap: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     justify-content: space-evenly;
 }
 
-.contact-main, .favorite-main  {
-    position: relative;
-    width: 350px;
-    height: 300px;
-    background-color: #a33b3b;
+.h4-main {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+} 
+
+.contact-content {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    height: 65px;
+    background-color: #f2f0eba6;
     border-radius: 10px;
 }
 
-.h4-main {
-    position: absolute;
-    text-align: center;
-    margin: auto;
-    top: 50%;  left: 0; right: 0;
-    transform: translateY(-50%);
-    font-size: 30px;
+.contact-contents {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contents-h5 {
+    font-size: 20px;
+    position: relative;
+    bottom: 31px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.contents-link {
+    position: relative;
+    top: 2px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.middle-box  {
+    position: relative;
+    width: 350px;
+    height: 325px;
+    border-radius: 10px;
+    background-image: url(/images/contact.jpg);
+    cursor: pointer;
+    background-size: cover;
+}
+
+#favorite {
+    background-image: url(/images/Favorite.jpg);
 }
 
 /* carousel style  */
@@ -245,7 +285,7 @@ main {
 
 .post-link {
     text-decoration: none;
-    color: #953535;
+    color: #7F2C2C;
     text-transform: uppercase;
     
 }
@@ -378,6 +418,11 @@ footer {
         font-size: 30px;
     }
 
+    .middle-main {
+        width: 70%;
+        margin: 0 auto;
+    }
+
     /* carousel style  */
 
     .slider-container {
@@ -424,12 +469,13 @@ footer {
         transition: transform 500ms ease;
     }
 
+
     .post:hover .post-content, 
     .post:focus-within .post-content  {
         transform: translateY(0);
     }
 
-    .post:focus-within .post-content {
+    .post:focus-within .post-content, .middle-box:focus-within .contact-contents {
         transition-duration: 0ms;
     }
 
@@ -442,6 +488,28 @@ footer {
     .post:focus-within .post-content > *:not(.post-title) {
         opacity: 1;
         transition-delay: 300ms;
+    }
+
+    .contact-contents > *:not(.contents-h5) {
+        opacity: 0;
+        transition: opacity 300ms linear;
+    }
+
+    .middle-box:hover .contact-contents > *:not(.contents-h5),
+    .middle-box:focus-within .contact-contents > *:not(.contents-h5) {
+        opacity: 1;
+        transition-delay: 300ms;
+    } 
+
+    .contact-contents > *:not(.contents-h5)  {
+        transform: translateY(20%);
+        transition: transform 500ms ease;
+    }
+
+    .middle-box:hover .contact-contents > *:not(.contents-h5),
+    .middle-box:focus-within .contact-contents {
+        transform: translateY(0);
+        transition: transform 500ms ease;
     }
 
     .nav_link:hover {
