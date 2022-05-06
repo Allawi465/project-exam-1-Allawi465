@@ -26,8 +26,9 @@ header {
     color: #000000;
     margin-left: 20px;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 29px;
     color: #2C464F;
+    margin-left: 20px;
 }
   
 nav {
@@ -121,16 +122,17 @@ nav li {
 
 .home-h1 {
     color: #2C464F;
-    font-size: 25px;
+    font-size: 24px;
     display: flex;
+    margin-top: 20px;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .view-btn {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .View-all {
@@ -145,19 +147,19 @@ nav li {
 /* Main about style  */
 
 .about-section {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .about-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    gap: 25px;
 }
 
 .about-backround {
     width: 400px;
-    border-right: 5px solid #7F2C2C;
+    border-right: 4px solid #7F2C2C;
 }
 
 .about-image {
@@ -169,25 +171,49 @@ nav li {
 .about-h4 {
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 28px;
     color: #2C464F;
     text-transform: capitalize;
-    margin: 10px 50px 20px;
+    margin: 10px 50px 10px;
     border-bottom: 2px solid #7F2C2C;
 }
 
 .about-field {
     width: 300px;
-    height: 300px;
+    margin-top: 50px;
+}
+
+.about-p {
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.about-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.about-link {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 30px 10px;
+    background-color: #7F2C2C;
+    color: #ffffff;
+    border-radius: 10px;
 }
 
 /* Main contact and favorite style  */
 
 .middle-container {
-    gap: 10px;
+    gap: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .inner-section {
@@ -216,6 +242,7 @@ nav li {
     height: 77px;
     background-color: #F2F0EB;
     border-radius: 2px;
+    margin-left: unset;
 }
 
 .contact-contents {
@@ -326,7 +353,7 @@ nav li {
 
 .post-title {
     height: 15px;
-    font-size: 18px;
+    font-size: 20px;
     color: #2C464F;
 }
 
@@ -382,6 +409,7 @@ footer {
 }
 
 .footer_link {
+    gap: 20px;
     color: #000000;
     text-decoration: none;
     text-transform: uppercase;
@@ -413,6 +441,11 @@ footer {
         align-items: center;
         box-sizing: border-box;
         justify-content: space-between;
+    }
+
+    .logo {
+        margin-left: 50px;
+        font-size: 35px;
     }
     
     nav {
@@ -466,11 +499,19 @@ footer {
     /*  Main style  */
 
     .home-h1 {
-        font-size: 30px;
+        font-size: 26px;
+        margin-top: 30px;
+        margin-bottom: 35px;
     }
 
-    .inner-section {
-        width: 500px;
+    /* Main about style  */
+
+    .about-container {
+        gap: 50px;
+    }
+
+    .about-field {
+        margin-top: 50px;
     }
 
     /* carousel style  */
@@ -483,6 +524,17 @@ footer {
         width: 250px;
         margin-left: 11px;
     }
+
+    /* Main contact and favorite style  */
+    
+
+    .middle-container {
+        gap: 60px;
+    }
+
+    .inner-section {
+        width: 500px;
+    }
     
     /* Footer style */
 
@@ -492,7 +544,7 @@ footer {
     }
 }
 
-/* carousel media query   */
+/* carousel media query */
 
 @media screen and (max-width: 875px) {
     .slider-container {
@@ -501,6 +553,10 @@ footer {
 
     .card {
         margin-left: 13px;
+    }
+
+    .about-field {
+        margin-top: unset;
     }
 }
 
@@ -512,9 +568,17 @@ footer {
     .card {
         margin-left: 11px;
     }
+
+    .about-field {
+        margin-top: unset;
+    }
+
+    .about-container {
+        gap: unset;
+    }
 }
 
-/*  media query  on hover  */
+/*  media query on hover  */
 
 @media (hover) {
 
@@ -572,5 +636,9 @@ footer {
     .arrows button:hover {
         background-color: rgba(0,0,0,1);
         opacity: 1;
+    }
+
+    .about-link:hover, .View-all:hover {
+        text-decoration: underline white;
     }
 }
