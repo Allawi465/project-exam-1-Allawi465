@@ -69,6 +69,10 @@ nav li {
     font-size: 14px;
 }
 
+.nav-hide {
+    display: none;
+}
+
 .top-nav {
     display: flex;
 }
@@ -115,10 +119,6 @@ nav li {
 
 /* Main style  */
 
-.nav-hide {
-    display: none;
-}
-
 .home-h1 {
     color: #2C464F;
     font-size: 25px;
@@ -142,27 +142,46 @@ nav li {
     color: #ffffff;
 }
 
-.about-container {
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    padding: 1rem;
-    justify-content: center;
+/* Main about style  */
+
+.about-section {
     margin-bottom: 50px;
 }
 
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
 .about-backround {
-    width: 100%;
-    height: 246px;
+    width: 400px;
+    border-right: 5px solid #7F2C2C;
+}
+
+.about-image {
+    height: 570px;
     background-image: url(/images/About.jpg);
     background-size: cover;
 }
 
-.about-field {
-    width: 345px;
-    height: 246px;
-    background-color: #ffffff;
+.about-h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #2C464F;
+    text-transform: capitalize;
+    margin: 10px 50px 20px;
+    border-bottom: 2px solid #7F2C2C;
 }
+
+.about-field {
+    width: 300px;
+    height: 300px;
+}
+
+/* Main contact and favorite style  */
 
 .middle-container {
     gap: 10px;
@@ -189,14 +208,6 @@ nav li {
 #favorite {
     background-image: url(/images/Favorite.jpg);
 }
-
-.h4-main {
-    display: flex;
-    font-size: 24px;
-    color: #2C464F;
-    justify-content: left;
-    padding-left: 20px;
-} 
 
 .contact-content {
     position: absolute;
@@ -265,7 +276,7 @@ nav li {
     width: 839px;
     position: relative;
     margin: 0 auto;
-    height: 375px;
+    height: 363px;
     overflow: hidden;
 }
 
@@ -481,7 +492,7 @@ footer {
     }
 }
 
-/* carousel media  */
+/* carousel media query   */
 
 @media screen and (max-width: 875px) {
     .slider-container {
@@ -503,7 +514,7 @@ footer {
     }
 }
 
-/* media on hover  */
+/*  media query  on hover  */
 
 @media (hover) {
 
@@ -511,7 +522,6 @@ footer {
         transform: translateY(25%);
         transition: transform 500ms ease;
     }
-
 
     .post:hover .post-content, 
     .post:focus-within .post-content  {
@@ -555,7 +565,7 @@ footer {
         transition: transform 300ms ease;
     }
 
-    .nav_link:hover {
+    .nav_link:hover, .footer_link:hover {
         color: #2C464F;
     }
 
