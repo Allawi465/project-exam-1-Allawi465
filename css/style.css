@@ -3,6 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    font-family: Roboto, sans-serif, 'Open Sans';
 }
 
 /* Header style */
@@ -23,12 +24,14 @@ header {
 
 .logo {
     text-transform: uppercase;
-    color: #000000;
     margin-left: 20px;
-    text-decoration: none;
     font-size: 29px;
     color: #2C464F;
     margin-left: 20px;
+    text-decoration: overline 3px #2c464fa4;
+    font-weight: bolder;
+    font-style: italic;
+    
 }
   
 nav {
@@ -65,9 +68,8 @@ nav li {
     text-decoration: none;
     text-transform: uppercase;
     margin-left: 15px;
-    font-weight: lighter;
     transition: transform 0.5s ease-in;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .nav-hide {
@@ -101,32 +103,36 @@ nav li {
     display: block;
     cursor: pointer;
     margin-right: 5px;
+    transition: transform 0.5s ease-in-out;
 }
   
 .burger .first {
     transform: rotate(-45deg) translate(-5px, 6px);
-    background-color: #7F2C2C;
+    background-color: #000000;
 }
 
 .burger .second {
     opacity: 0;
-    background-color: #7F2C2C;
+    background-color: #000000;
 }
 
 .burger .third {
     transform: rotate(45deg) translate(-5px, -6px);
-    background-color: #7F2C2C;
+    background-color: #000000;
 }
 
 /* Main style  */
 
 .home-h1 {
-    color: #2C464F;
-    font-size: 24px;
+    color: #000000;
+    padding: 1rem;
+    font-size: 20px;
+    text-transform: uppercase;
     display: flex;
     margin-top: 20px;
     justify-content: center;
     margin-bottom: 20px;
+    font-weight: lighter;
 }
 
 .view-btn {
@@ -148,6 +154,8 @@ nav li {
 
 .about-section {
     margin-bottom: 80px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
 }
 
 .about-container {
@@ -174,12 +182,13 @@ nav li {
     font-size: 28px;
     color: #2C464F;
     text-transform: capitalize;
-    margin: 10px 50px 10px;
+    margin: 10px 110px 10px;
     border-bottom: 2px solid #7F2C2C;
+    font-style: italic;
 }
 
 .about-field {
-    width: 300px;
+    width: 400px;
     margin-top: 50px;
 }
 
@@ -202,7 +211,7 @@ nav li {
     text-decoration: none;
     font-size: 20px;
     padding: 10px 30px 10px;
-    background-color: #7F2C2C;
+    background-color: #2C464F;
     color: #ffffff;
     border-radius: 10px;
 }
@@ -254,10 +263,10 @@ nav li {
 .contents-h5 {
     font-size: 18px;
     position: relative;
-    font-weight: bolder;
     bottom: 20px;
     color: #2C464F;
     text-transform: uppercase;
+    font-weight: 300;
 }
 
 .contents-link {
@@ -288,12 +297,12 @@ nav li {
   border-left: 11px solid #7F2C2C;
 } 
 
-
 /* carousel style  */
 
 .post-h2 {
     display: flex;
-    font-size: 22px;
+    font-style: italic;
+    font-size: 20px;
     justify-content: center;
     text-transform: uppercase;
     color: #7F2C2C;
@@ -436,12 +445,6 @@ footer {
 @media screen and (min-width: 1082px) {
 
     /* Header style  */
-    
-    .topHeader {
-        align-items: center;
-        box-sizing: border-box;
-        justify-content: space-between;
-    }
 
     .logo {
         margin-left: 50px;
@@ -458,7 +461,6 @@ footer {
     
     nav ul {
         display: flex;
-        border: none;
         gap: 10px;
         flex-wrap: wrap;
     }
@@ -489,7 +491,7 @@ footer {
     }
 
     .nav_link {
-        font-size: 17px;
+        font-size: 20px;
     }
 
     .nav-hide {
@@ -499,7 +501,7 @@ footer {
     /*  Main style  */
 
     .home-h1 {
-        font-size: 26px;
+        font-size: 24px;
         margin-top: 30px;
         margin-bottom: 35px;
     }
@@ -511,10 +513,15 @@ footer {
     }
 
     .about-field {
-        margin-top: 50px;
+        margin-top: 95px;
     }
 
     /* carousel style  */
+    
+    .post-h2 {
+        
+        font-size: 22px;
+    }
 
     .slider-container {
         width: 1050px;
@@ -561,6 +568,7 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+    
     .slider-container {
         width: 279px;
     }
@@ -598,13 +606,13 @@ footer {
 
     .post-content > *:not(.post-title) {
         opacity: 0;
-        transition: opacity 300ms linear;
+        transition: opacity 320ms linear;
     }
 
     .post:hover .post-content  > *:not(.post-title), 
     .post:focus-within .post-content > *:not(.post-title) {
         opacity: 1;
-        transition-delay: 300ms;
+        transition-delay: 320ms;
     }
 
     .contact-contents > *:not(.contents-h5) {
