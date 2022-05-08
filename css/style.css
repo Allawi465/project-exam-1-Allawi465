@@ -26,10 +26,10 @@ header {
     text-transform: uppercase;
     margin-left: 20px;
     font-size: 29px;
-    color: #2C464F;
+    color: #0000006f;
     margin-left: 20px;
-    text-decoration: overline 3px #2c464fa4;
-    font-weight: bolder;
+    text-decoration: overline #0000006f;
+    font-weight: bold;
     font-style: italic;
     
 }
@@ -148,12 +148,13 @@ nav li {
     padding: 10px 30px 10px;
     background-color: #7F2C2C;
     color: #ffffff;
+    border-radius: 4px;
 }
 
 /* Main about style  */
 
 .about-section {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     padding: 1rem;
 }
@@ -188,7 +189,7 @@ nav li {
 }
 
 .about-field {
-    width: 400px;
+    width: 359px;
     margin-top: 50px;
 }
 
@@ -213,7 +214,7 @@ nav li {
     padding: 10px 30px 10px;
     background-color: #2C464F;
     color: #ffffff;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 /* Main contact and favorite style  */
@@ -314,6 +315,7 @@ nav li {
     margin: 0 auto;
     height: 363px;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 
 .inner-slider {
@@ -404,6 +406,48 @@ nav li {
     margin-left: 22px;
 }
 
+/* All Posrs page style  */
+
+.post-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding: 1rem;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    max-height: 695px;
+    overflow: hidden;
+}
+
+.post-container-open {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding: 1rem;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.all-post  {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.show-more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.show-more-btn {
+    border: none;
+    font-size: 20px;
+    padding: 10px 30px 10px;
+    background-color: #7F2C2C;
+    color: #ffffff;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
 /* Footer style  */
 
 footer {
@@ -441,6 +485,9 @@ footer {
     transition: 0.5s ease;
     margin-bottom: 25px;
 }
+
+
+/* media query for bigger screen */
 
 @media screen and (min-width: 1082px) {
 
@@ -542,7 +589,14 @@ footer {
     .inner-section {
         width: 500px;
     }
-    
+
+    /* All Posrs page style  */
+
+    .all-post {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     /* Footer style */
 
     .footer_link {
@@ -551,9 +605,15 @@ footer {
     }
 }
 
-/* carousel media query */
+/* media query for smaller screen */
 
 @media screen and (max-width: 875px) {
+
+    .all-post {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .slider-container {
         width: 560px;
     }
@@ -568,6 +628,19 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+
+    .post-container {
+        height: 1420px;
+    }
+
+    .all-post {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .all-post-open {
+        height: unset;
+    }
     
     .slider-container {
         width: 279px;

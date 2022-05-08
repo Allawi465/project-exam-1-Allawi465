@@ -10,6 +10,8 @@ async function getPost(url) {
         console.log(posts)
 
         getPosts(posts)
+        allPosts(posts)
+        
     
     } 
     catch(error) {
