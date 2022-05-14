@@ -10,12 +10,11 @@ async function getPost(url) {
         console.log(posts)
 
         getPosts(posts)
-        allPosts(posts)
         
     
     } 
     catch(error) {
-       /*  messageCotainer.innerHTML = `<p> An error occurred when showing the Games</p>` */
+       /*  postontainer.innerHTML = `<p> An error occurred when showing the Games</p>` */
        console.log(error)
     }
 };

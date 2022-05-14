@@ -49,16 +49,20 @@
         </div>
     </header>
     <main>
-        <section class="all-post-section">
-            <h1 class="home-h1">All Posts</h1>
-            <div class="post-container">
-                <div class="all-post">
-                </div>
+        <h1 class="home-h1">All Posts</h1>
+        <div class="search-container">
+            <input type="search" id="search" placeholder="Search for a destination">
+            <button class="search-btn">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="post-container">
+            <div class="all-post">
             </div>
-            <div class="show-more">
-                <button class="show-more-btn">Show More</button>
-            </div>
-        </section>
+        </div>
+        <div class="show-more">
+            <button class="show-more-btn">Show More</button>
+        </div>
     </main>
     <footer>
         <div class="footer_links">
@@ -77,5 +81,5 @@
     </footer>
 </body>
     <script src="js/index.js"></script>
-    <script src="js/api/callPost.js"></script>
+    <script src="js/api/callPost.js" type="module"></script>
 </html>

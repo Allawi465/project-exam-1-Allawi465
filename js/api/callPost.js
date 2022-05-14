@@ -1,56 +1,112 @@
-const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
+import { existingFavs, saveFavs  } from "../localStorage/favor.js"; 
+
+const allPost = document.querySelector(".all-post");
+
+const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
 
 async function getPost(url) {
     try {
         const response = await fetch(url);
         
-        const posts = await response.json();
+        const data = await response.json();
 
-        console.log(posts)
-
-        allPosts(posts)
-
-        allPosts2(posts)
-        
+        allPosts(data)
     
     } 
     catch(error) {
-       /*  messageCotainer.innerHTML = `<p> An error occurred when showing the Games</p>` */
+       /*  allPost.innerHTML = `<p> An error occurred when showing the Games</p>` */
        console.log(error)
     }
 };
 
 getPost(wpUrl)
 
-function allPosts(posts) {
+function allPosts(data) {
 
-    for (let i = 0 ; i < posts.length; i++) {
+    const favourites = existingFavs();
 
-        const allPost = document.querySelector(".all-post");
+    for (let i = 0 ; i < data.length; i++) {
+    
+        const id = data[i].id;
+        const title = data[i].title.rendered;
+
+        let red = "far";
+
+       const ObjectExist = favourites.find(function(fav) {
+            return parseInt(fav.id) === id;
+        });
+
+        if (ObjectExist) {
+            red = "fa";
+        } 
 
         allPost.innerHTML += `<div class="card">
                                         <div class="post"> 
-                                        <div class="background-image" style="background-image: url('${posts[i].acf.image}')"></div>
+                                            <div class="background-image" style="background-image: url('${data[i].acf.image}')"></div>
+                                            <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}"></i></div>
                                             <div class="post-content">
-                                                <h3 class="post-title">${posts[i].title.rendered}</h3>
-                                                <p class="post-paragf">${posts[i].acf.Paragraph}</p>
+                                                <h3 class="post-title">${data[i].title.rendered}</h3>
+                                                <p class="post-paragf">${data[i].acf.Paragraph}</p>
                                                 <a href="#" class="post-link">show post</a>
                                             </div>
                                         </div>
                                     </div>`;
     }
+
+    const favButtons = document.querySelectorAll(".post i"); 
+
+    favButtons.forEach((button) => {
+        button.addEventListener("click", handleClick);
+    });
+    
+    function handleClick() {;
+        this.classList.toggle("fa");
+        this.classList.toggle("far")
+        const name = this.dataset.name;
+        const id = this.dataset.id;
+        
+        const currentFavs = existingFavs();
+
+        const destinationEcists = currentFavs.find(function(fav) {
+            return fav.id === id;
+        })
+
+        if (destinationEcists === undefined) {
+            const product = { id: id, name: name };
+            currentFavs.push(product);
+            saveFavs(currentFavs);
+        } else {
+            const newFavs = currentFavs.filter(fav => fav.id !== id);
+            saveFavs(newFavs);
+        }
+    } 
 };
 
+const searchButton = document.querySelector(".search-btn")
+
+
+const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
+
+searchButton.onclick = function() {
+    const searchInput = document.querySelector("#search").value;
+    const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
+    allPost.innerHTML = "";
+    getPost(newurl)
+};
 
 const showMoreBtn = document.querySelector(".show-more-btn");
-const contentPost = document.querySelector(".post-container");
+
+const newUrl = `http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12`
 
 showMoreBtn.onclick = function() {
-    if (contentPost.className ==="post-container-open" ) {
-        contentPost.className = "post-container";
-        showMoreBtn.innerHTML = "Show More"
-    } else {
-        contentPost.className = "post-container-open"
+
+    if (showMoreBtn.innerHTML === "Show More") {
+        allPost.innerHTML = "";
         showMoreBtn.innerHTML = "Show Less"
+        getPost(newUrl)
+    } else {
+        allPost.innerHTML = "";
+        showMoreBtn.innerHTML = "Show More"
+        getPost(wpUrl)
     }
 };
