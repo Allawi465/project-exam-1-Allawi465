@@ -8,11 +8,9 @@ async function getPost(url) {
     try {
         const response = await fetch(url);
         
-        const data = await response.json();
+        const post = await response.json();
 
-        allPosts(data)
-
-        console.log(data)
+        allPosts(post)
     
     } 
     catch(error) {
@@ -23,14 +21,14 @@ async function getPost(url) {
 
 getPost(wpUrl)
 
-function allPosts(data) {
+function allPosts(post) {
 
     const favourites = existingFavs();
 
-    for (let i = 0 ; i < data.length; i++) {
+    for (let i = 0 ; i < post.length; i++) {
     
-        const id = data[i].id;
-        const title = data[i].title.rendered;
+        const id = post[i].id;
+        const title = post[i].title.rendered;
 
         let red = "far";
 
@@ -44,12 +42,14 @@ function allPosts(data) {
 
         allPost.innerHTML += `<div class="card">
                                         <div class="post"> 
-                                            <div class="background-image" style="background-image: url('${data[i].acf.image}')"></div>
+                                            <div class="background-image">
+                                                <img src="${post[i].acf.image}" class="image" alt="">
+                                            </div>
                                             <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}"></i></div>
                                             <div class="post-content">
-                                                <h3 class="post-title">${data[i].title.rendered}</h3>
-                                                <p class="post-paragf">${data[i].acf.Paragraph}</p>
-                                                <a href="#" class="post-link">show post</a>
+                                                <h3 class="post-title">${post[i].title.rendered}</h3>
+                                                <p class="post-paragf">${post[i].acf.Paragraph}</p>
+                                                <a href="post.html?id=${post[i].id}"class="post-link">show post</a>
                                             </div>
                                         </div>
                                     </div>`;
@@ -89,7 +89,12 @@ const searchButton = document.querySelector(".search-btn")
 
 const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
 
-
+searchButton.onclick = function() {
+    const searchInput = document.querySelector("#search").value;
+    const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
+    allPost.innerHTML = "";
+    getPost(newurl)
+};
 
 const showMoreBtn = document.querySelector(".show-more-btn");
 
@@ -107,15 +112,3 @@ showMoreBtn.onclick = function() {
         getPost(wpUrl)
     }
 };
-
-const searchInputField = document.querySelector(".search-container input")
-
-
-
-searchInputField.addEventListener("keyup", function() {
-    const searchInput = searchInputField.value;
-    const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
-    allPost.innerHTML = "";
-    getPost(newurl)
-    console.log(searchInput)
-});

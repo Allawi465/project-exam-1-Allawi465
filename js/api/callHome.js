@@ -27,7 +27,7 @@ function getPosts(posts) {
 
         postontainer.innerHTML += `<div class="card">
                                         <div class="post"> 
-                                        <div class="background-image" style="background-image: url('${posts[i].acf.image}')"></div>
+                                        <div class="background-image"><img src="${posts[i].acf.image}" class="image" alt=""></div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${posts[i].title.rendered}</h3>
                                                 <p class="post-paragf">${posts[i].acf.Paragraph}</p>
@@ -37,3 +37,5 @@ function getPosts(posts) {
                                     </div>`;
     }
 };
+
+/* */
