@@ -88,13 +88,23 @@ const searchButton = document.querySelector(".search-btn")
 
 
 const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
+const searchInputField = document.querySelector(".search-container input")
 
 searchButton.onclick = function() {
     const searchInput = document.querySelector("#search").value;
     const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
     allPost.innerHTML = "";
     getPost(newurl)
-};
+}; 
+
+
+/* searchInputField.addEventListener("keyup", function() {
+    const searchInput = searchInputField.value;
+    allPost.innerHTML = "";
+    const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
+    getPost(newurl)
+    console.log(searchInput)
+}); */
 
 const showMoreBtn = document.querySelector(".show-more-btn");
 

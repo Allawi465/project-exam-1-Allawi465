@@ -40,6 +40,9 @@ function createHtml(post) {
                                         <h3 class="h3-single-post">${post.acf.Paragraph}</h3>
                                         <p class="p-single-post">${post.acf.Text}</p>
                                         <p class="p-single-post">${post.acf.moretext}</p>
+                                        <div class="view-btn-single">
+                                            <a href="#" class="View-all">View More Post</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="futured-img">
