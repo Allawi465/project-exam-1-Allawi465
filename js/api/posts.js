@@ -11,7 +11,6 @@ async function getPost(url) {
         const post = await response.json();
 
         allPosts(post)
-    
     } 
     catch(error) {
        /*  allPost.innerHTML = `<p> An error occurred when showing the Games</p>` */
@@ -43,13 +42,13 @@ function allPosts(post) {
         allPost.innerHTML += `<div class="card">
                                         <div class="post"> 
                                             <div class="background-image">
-                                                <img src="${post[i].acf.image}" class="image" alt="">
+                                                <a href="post.html?id=${post[i].id}"><img src="${post[i].acf.image}" class="image" alt=""></a>
                                             </div>
                                             <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}"></i></div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${post[i].title.rendered}</h3>
                                                 <p class="post-paragf">${post[i].acf.Paragraph}</p>
-                                                <a href="post.html?id=${post[i].id}"class="post-link">show post</a>
+                                                <a href="post.html?id=${post[i].id}" class="post-link">show post</a>
                                             </div>
                                         </div>
                                     </div>`;
@@ -85,10 +84,7 @@ function allPosts(post) {
 };
 
 const searchButton = document.querySelector(".search-btn")
-
-
 const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
-const searchInputField = document.querySelector(".search-container input")
 
 searchButton.onclick = function() {
     const searchInput = document.querySelector("#search").value;
@@ -96,15 +92,6 @@ searchButton.onclick = function() {
     allPost.innerHTML = "";
     getPost(newurl)
 }; 
-
-
-/* searchInputField.addEventListener("keyup", function() {
-    const searchInput = searchInputField.value;
-    allPost.innerHTML = "";
-    const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
-    getPost(newurl)
-    console.log(searchInput)
-}); */
 
 const showMoreBtn = document.querySelector(".show-more-btn");
 
@@ -122,3 +109,49 @@ showMoreBtn.onclick = function() {
         getPost(wpUrl)
     }
 };
+
+/* const timescroll = setTimeout(function() {
+    window.scrollTo(0,document.body.scrollHeight);
+    1000}); */
+
+
+
+/* searchInputField.addEventListener("keyup", function() {
+    const searchValue = event.target.value.trim().toLowerCase();
+    allPost.innerHTML = "";
+    const newurl = searchUrl + `?search=${searchValue}&acf_format=standard`;
+    getPost(newurl)
+    console.log(searchInput)
+}); */
+
+
+/* function searchPost(post) {
+    const searchInputField = document.querySelector(".search-container input")
+
+    search.onkeyup = function(event) {
+        console.log(event);
+
+        const searchValue = event.target.value.trim().toLowerCase();
+
+        const newurl = searchUrl + `?search=${searchValue}&acf_format=standard`;
+
+        const filteredPost = post.filter(function (post) {
+            if (post.title.toLowerCase().startsWith(searchValue)) {
+                return true;
+            }
+        });
+
+        getPost(filteredPost);
+    };
+} */
+
+/* const searchInputField = document.querySelector(".search-container input")
+
+function search() {
+    if (searchInputField.value === "" ) {
+        allPost.innerHTML = "";
+        getPost(wpUrl)
+    }
+};
+
+console.log(searchInputField) */

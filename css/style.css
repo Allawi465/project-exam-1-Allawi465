@@ -346,6 +346,11 @@ main {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
+.card-whole-link {
+    text-decoration: none;
+   
+}
+
 .post {
     height: 100%;
     max-width: 266px;
@@ -560,6 +565,35 @@ main {
     margin-bottom: 50px;
 }
 
+.popup-images {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    z-index: 100;
+    display: none;
+}
+
+.close-images {
+    position: absolute;
+    top: 0; right: 20px;
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: bolder;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.pop-image {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: #000000 5px solid;
+    object-fit: cover;
+    max-width: 95%;
+}
+
 /* Footer style  */
 
 footer {
@@ -719,6 +753,10 @@ footer {
         max-width: 610px;
         position: relative;
         left: 20px; top: 20px;
+    }
+    
+    .pop-image {
+        width: 650px;
     }
 
     /* Footer style */
