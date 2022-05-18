@@ -86,7 +86,8 @@ function allPosts(post) {
 const searchButton = document.querySelector(".search-btn")
 const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
 
-searchButton.onclick = function() {
+searchButton.onclick = function(e) {
+    e.preventDefault();
     const searchInput = document.querySelector("#search").value;
     const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
     allPost.innerHTML = "";

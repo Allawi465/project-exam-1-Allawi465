@@ -11,7 +11,7 @@
     <script
         src="https://kit.fontawesome.com/a2e814cf6f.js" crossorigin="anonymous">
     </script>
-    <title>Explore It | All Posts page</title>
+    <title>Explore It | Contact page</title>
 </head>
 <body>
     <header>
@@ -33,7 +33,7 @@
                         <a class="nav_link" href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="nav_link" id="active" href="">Posts</a>
+                        <a class="nav_link" href="posts.html">Posts</a>
                     </li>
                     <li class="nav-hide">
                         <a class="nav_link" href="">favorite</a>
@@ -42,34 +42,58 @@
                         <a class="nav_link" href="">About</a>
                     </li>
                     <li>
-                        <a class="nav_link" href="contact.html">Contact</a>
+                        <a class="nav_link" id="active" href="">Contact</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <h1 class="home-h1">All Posts</h1>
-        <div class="search-container">
-            <input type="search" id="search" placeholder="Search for a destination">
-            <button class="search-btn">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-        <div class="post-container">
-            <div class="all-post">
-            </div>
-        </div>
-        <div class="show-more">
-            <button class="show-more-btn">Show More</button>
+        <h1 class="home-h1">Contact Us</h1>
+        <h2 class="h2-contact-us">Send us a message and we’ll get back to you within 24 hours.</h2>
+        <div class="container-form">
+            <div id="formMessage"></div>
+            <form id="form" name="contact-form">
+                <div>
+                    <label>
+                        Your Name
+                        <input name="your-name" id="yourname"/>
+                    </label>
+                    <div class="formError" id="nameError">Name (minimum 5 characters)</div>
+                </div>
+                <div>
+                    <label>
+                        Email 
+                        <input name="your-email" id="email"/>
+                    </label>
+                    <div class="formError" id="eMailError">Please enter a valid email address</div>
+                </div>
+                <div>
+                    <label>
+                        Subject
+                        <input name="your-subject" id="subject"/>
+                    </label>
+                    <div class="formError" id="subjectError">Subject (minimum 15 characters)</div>
+                </div>
+                <div>
+                    <label>
+                        Message
+                        <textarea name="your-message" id="message" cols="30" rows="5"></textarea> 
+                    </label>    
+                    <div class="formError" id="messageError">The Message must be at least 25 characters</div>
+                </div>
+                <div class="continue">
+                <input type="submit" class="submit"/>
+                </div>
+            </form>
         </div>
     </main>
     <footer>
         <div class="footer_links">
-            <a class="footer_link" id="active" href="">Posts</a>
+            <a class="footer_link" href="">Posts</a>
             <a class="footer_link" href="">Favorite</a>
             <a class="footer_link" href="">About</a>
-            <a class="footer_link" href="contact.html">Contact</a>
+            <a class="footer_link" id="active" href="">Contact</a>
         </div>
         <div class="social-links">
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -81,5 +105,5 @@
     </footer>
 </body>
 <script src="js/index.js"></script>
-<script src="js/api/posts.js" type="module"></script>
+<script src="js/form/contactForm.js"></script>
 </html>

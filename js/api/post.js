@@ -13,6 +13,7 @@ async function singlePost(url) {
         const post = await response.json();
 
         createHtml(post)
+        showImages(post)
     
     } 
     catch(error) {
@@ -44,30 +45,34 @@ function createHtml(post) {
                                 <div class="futured-img">
                                     <img src="${post.acf.image}" class="post-images-futured" alt="" id="images">
                                 </div>`;
-
-const popup = document.querySelector(".popup-images");
-const img = document.querySelectorAll("#images");
-const popImages = document.querySelector(".pop-image");
-
-img.forEach(image => {
-    image.onclick = () => {
-        popup.style.display = "block";
-        popImages.scr = this.scr;
-    /*     popImages.scr = image.getAttribute("scr"); */
-    }
-});
-console.log(img)
-
 };
 
-const close = document.querySelector(".close-images"); 
+function showImages() {
+    const popup = document.querySelector(".popup-images");
+    let img = document.querySelectorAll(".single-post img");
+    const popImages = document.querySelector(".pop-image");
 
-close.onclick = () => {
-    document.querySelector(".popup-images").style.display = "none";
+    img.forEach(image => {
+        image.onclick = () => {
+            popup.style.display = "block";
+            popImages.innerHTML = image.outerHTML;
+        
+            console.log(image)
+        }
+    });
+    closePopImage()
 }
 
-const popup = document.querySelector(".popup-images");
+function closePopImage() {
+    const close = document.querySelector(".close-images"); 
 
-popup.onclick = () => {
-    document.querySelector(".popup-images").style.display = "none";
-}
+    close.onclick = () => {
+        document.querySelector(".popup-images").style.display = "none";
+    }
+
+    const popup = document.querySelector(".popup-images");
+
+    popup.onclick = () => {
+        document.querySelector(".popup-images").style.display = "none";
+    }
+};
