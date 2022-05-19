@@ -30,7 +30,6 @@ header {
     text-decoration: overline #0000006f;
     font-weight: bold;
     font-style: italic;
-    
 }
   
 nav {
@@ -141,7 +140,7 @@ main {
 .view-btn {
     display: flex;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .View-all {
@@ -157,7 +156,7 @@ main {
 /* Main about style  */
 
 .about-section {
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     padding: 1rem;
 }
@@ -638,16 +637,26 @@ label {
 .submit {
     margin-top: 20px;
     border: none;
-    padding: 1.2rem;
+    padding: 1rem;
     width: 150px;
     background: #7F2C2C;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 23px;
     color: #ffff;
     cursor: pointer;
     margin-bottom: 10px;
     text-transform: capitalize;
 }
+
+/* favouritestPage style */
+
+    .h2-favouritest-us {
+        display: flex;
+        font-weight: 300;
+        font-size: 20px;
+        justify-content: center;
+        padding-left: 1rem;
+    }
 
 /* Footer style  */
 
@@ -949,3 +958,22 @@ footer {
         text-decoration: underline white;
     }
 }
+
+.loading {
+    border: 8px solid rgb(190, 184, 184);
+    border-top: 8px solid #7F2C2C;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }

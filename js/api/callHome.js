@@ -1,4 +1,6 @@
 const postontainer = document.querySelector(".card-slider");
+const loading = document.querySelector(".loading");
+
 const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
 
 async function getPost(url) {
@@ -7,10 +9,7 @@ async function getPost(url) {
         
         const posts = await response.json();
 
-        console.log(posts)
-
         getPosts(posts)
-        
     
     } 
     catch(error) {
@@ -22,6 +21,8 @@ async function getPost(url) {
 getPost(wpUrl)
 
 function getPosts(posts) {
+
+    loading.classList.remove("loading");
 
     for (let i = 0 ; i < posts.length; i++) {
 
@@ -37,5 +38,3 @@ function getPosts(posts) {
                                     </div>`;
     }
 };
-
-/* */

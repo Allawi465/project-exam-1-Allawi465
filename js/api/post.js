@@ -1,7 +1,5 @@
 const queryString = document.location.search;
-
 const params = new URLSearchParams(queryString);
-
 const id = params.get("id");
 
 const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
@@ -34,7 +32,7 @@ function createHtml(post) {
                                         <img src="${post.acf.FeaturedImage}" class="post-images" alt="" id="images">
                                     </div>
                                     <div class="single-post-text">
-                                        <h3 class="h3-single-post">${post.acf.Paragraph}</h3>
+                                        <h3 class="h3-single-post">${post.acf.paragraph2}</h3>
                                         <p class="p-single-post">${post.acf.Text}</p>
                                         <p class="p-single-post">${post.acf.moretext}</p>
                                         <div class="view-btn-single">
@@ -56,10 +54,9 @@ function showImages() {
         image.onclick = () => {
             popup.style.display = "block";
             popImages.innerHTML = image.outerHTML;
-        
-            console.log(image)
         }
     });
+
     closePopImage()
 }
 

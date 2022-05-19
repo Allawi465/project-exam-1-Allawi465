@@ -31,7 +31,7 @@ async function contactForm (event) {
 function formSetup(event) {
     event.preventDefault();
 
-    if (lenghtForm(fullName.value, 1) === true) {
+    if (lenghtForm(fullName.value, 5) === true) {
         nameError.style.display = "none";
     } else {
         nameError.style.display = "block";
@@ -55,7 +55,7 @@ function formSetup(event) {
         messageError.style.display = "block";
     }
 
-    if (lenghtForm(fullName.value, 1) && lenghtForm(subject.value, 10) && lenghtForm(messageBox.value, 25) && confirmEmail(eMail.value)) {
+    if (lenghtForm(fullName.value, 5) && lenghtForm(subject.value, 15) && lenghtForm(messageBox.value, 25) && confirmEmail(eMail.value)) {
         message.innerHTML = `<h3 class="h2-contact-us">Thank you for getting in touch!</h3>`;
         form.reset();
     } else {

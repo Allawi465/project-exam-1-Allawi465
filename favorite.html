@@ -11,7 +11,7 @@
     <script
         src="https://kit.fontawesome.com/a2e814cf6f.js" crossorigin="anonymous">
     </script>
-    <title>Explore It | Contact page</title>
+    <title>Explore It | favorite page</title>
 </head>
 <body>
     <header>
@@ -36,64 +36,37 @@
                         <a class="nav_link" href="posts.html">Posts</a>
                     </li>
                     <li class="nav-hide">
-                        <a class="nav_link" href="favorite.html">favorite</a>
+                        <a class="nav_link" id="active" href="favorite.html">favorite</a>
                     </li>
                     <li>
                         <a class="nav_link" href="">About</a>
                     </li>
                     <li>
-                        <a class="nav_link" id="active" href="">Contact</a>
+                        <a class="nav_link" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <h1 class="home-h1">Contact Us</h1>
-        <h2 class="h2-contact-us">Send us a message and we’ll get back to you within 24 hours.</h2>
-        <div class="container-form">
-            <div id="formMessage"></div>
-            <form id="form" name="contact-form">
-                <div>
-                    <label>
-                        Your Name
-                        <input name="your-name" id="yourname"/>
-                    </label>
-                    <div class="formError" id="nameError">Name (minimum 5 characters)</div>
-                </div>
-                <div>
-                    <label>
-                        Email 
-                        <input name="your-email" id="email"/>
-                    </label>
-                    <div class="formError" id="eMailError">Please enter a valid email address</div>
-                </div>
-                <div>
-                    <label>
-                        Subject
-                        <input name="your-subject" id="subject"/>
-                    </label>
-                    <div class="formError" id="subjectError">Subject (minimum 15 characters)</div>
-                </div>
-                <div>
-                    <label>
-                        Message
-                        <textarea name="your-message" id="message" cols="30" rows="5"></textarea> 
-                    </label>    
-                    <div class="formError" id="messageError">The Message must be at least 25 characters</div>
-                </div>
-                <div class="continue">
-                <input type="submit" class="submit" value="Submit"/>
-                </div>
-            </form>
+        <h1 class="home-h1">favourites destination</h1>
+        <div id="formMessage"></div>
+        <div class="post-container">
+            <div class="loading"></div>
+            <div class="all-post">
+
+            </div>
+        </div>
+        <div class="view-btn">
+            <a href="posts.html" class="View-all">View all post</a>
         </div>
     </main>
     <footer>
         <div class="footer_links">
             <a class="footer_link" href="posts.html">Posts</a>
-            <a class="footer_link" href="favorite.html">Favorite</a>
+            <a class="footer_link" id="active" href="">Favorite</a>
             <a class="footer_link" href="">About</a>
-            <a class="footer_link" id="active" href="contact.html">Contact</a>
+            <a class="footer_link" href="contact.html">Contact</a>
         </div>
         <div class="social-links">
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -105,5 +78,5 @@
     </footer>
 </body>
 <script src="js/index.js"></script>
-<script src="js/form/contactForm.js"></script>
+<script src="js/favorites/favorites.js" type="module"></script>
 </html>
