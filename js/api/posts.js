@@ -113,6 +113,8 @@ showMoreBtn.onclick = function() {
         loading.classList.add("loading");
         showMoreBtn.innerHTML = "Show Less"
         getPost(newUrl)
+        window.scrollTo(0, 1000);
+        
     } else {
         allPost.innerHTML = "";
         loading.classList.add("loading");
@@ -120,18 +122,3 @@ showMoreBtn.onclick = function() {
         getPost(wpUrl)
     }
 };
-
-/* const timescroll = setTimeout(function() {
-    window.scrollTo(0,document.body.scrollHeight);
-    1000}); */
-
-/* const searchInputField = document.querySelector(".search-container input")
-
-function search() {
-    if (searchInputField.value === "" ) {
-        allPost.innerHTML = "";
-        getPost(wpUrl)
-    }
-};
-
-console.log(searchInputField) */

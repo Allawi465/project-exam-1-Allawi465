@@ -170,13 +170,14 @@ main {
 
 .about-backround {
     width: 400px;
-    border-right: 4px solid #7F2C2C;
+    height: 570px;
 }
 
 .about-image {
-    height: 570px;
-    background-image: url(/images/About.jpg);
-    background-size: cover;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    border-right: 4px solid #7F2C2C;
 }
 
 .about-h4 {
@@ -191,7 +192,7 @@ main {
 }
 
 .about-field {
-    width: 359px;
+    width: 410px;
     margin-top: 50px;
 }
 
@@ -229,27 +230,27 @@ main {
 }
 
 .inner-section {
-    width: 380px;
+    width: 450px;
     border-radius: 10px;
 }
 
 .middle-box  {
     position: relative;
-    height: 375px;
+    height: 500px;
     border-radius: 10px;
-    background-image: url(/images/contact.jpg);
-    cursor: pointer;
-    background-size: cover;
     margin-bottom: 50px;
 }
 
-#favorite {
-    background-image: url(/images/Favorite.jpg);
+.middle-box img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
 }
 
 .contact-content {
     position: absolute;
-    top: 80%;
+    top: 85%;
     width: 100%;
     height: 77px;
     background-color: #F2F0EB;
@@ -340,7 +341,6 @@ main {
     width: 266px;
     margin-left: 12px;
     border-radius: 20px;
-    cursor: pointer;
     background-color: #FBF9F4;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
@@ -363,6 +363,7 @@ main {
     border-radius: 10px;
     object-fit: cover;
     width: 100%;
+    cursor: pointer;
 }
 
 .post-content {
@@ -462,6 +463,7 @@ main {
     color: rgba(0, 0, 0, 0.75);
     position: relative;
     top: 2px;
+    cursor: pointer;
 }
 
 .post i.fa {
@@ -569,14 +571,14 @@ main {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, .9);
     z-index: 100;
     display: none;
 }
 
 .close-images {
     position: absolute;
-    top: 40px; right: 20px;
+    top: 65px; right: 20px;
     font-size: 45px;
     color: #ffffff;
     font-weight: bolder;
@@ -590,9 +592,7 @@ main {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
-    width: 65%;
-    max-height: 90%;
+    width: 500px;
 }
 
 /* contact us Page style */
@@ -650,13 +650,26 @@ label {
 
 /* favouritestPage style */
 
-    .h2-favouritest-us {
-        display: flex;
-        font-weight: 300;
-        font-size: 20px;
-        justify-content: center;
-        padding-left: 1rem;
-    }
+.h2-favouritest-us {
+    display: flex;
+    font-weight: 300;
+    font-size: 20px;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+/* about me Page style */
+
+.about-h2 {
+    font-weight: lighter;
+    text-align: center;
+    font-style: italic;
+    font-size: 24px;
+}
+
+.about-field-page {
+    width: 560px;
+}
 
 /* Footer style  */
 
@@ -695,7 +708,6 @@ footer {
     transition: 0.5s ease;
     margin-bottom: 25px;
 }
-
 
 /* media query for bigger screen */
 
@@ -769,7 +781,7 @@ footer {
         gap: 50px;
     }
 
-    .about-field {
+    .about-field, .about-field-page {
         margin-top: 95px;
     }
 
@@ -814,17 +826,13 @@ footer {
     }
 
     .single-post-text {
-        max-width: 610px;
+        max-width: 620px;
         position: relative;
         left: 20px; top: 20px;
     }
-    
-    .pop-image {
-        width: 650px;
-    }
 
     .p-single-post {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     /* contact us Page style */
@@ -859,7 +867,7 @@ footer {
         margin-left: 13px;
     }
 
-    .about-field {
+    .about-field, .about-field-page {
         margin-top: unset;
     }
 }
@@ -890,7 +898,7 @@ footer {
     }
 
     .pop-image {
-        width: 100%;
+        width: 90%;
     }
 }
 
