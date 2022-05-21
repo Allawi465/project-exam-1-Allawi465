@@ -127,7 +127,7 @@ main {
 
 .home-h1 {
     padding: 1rem;
-    font-size: 22px;
+    font-size: 24px;
     text-transform: uppercase;
     display: flex;
     margin-top: 20px;
@@ -310,7 +310,7 @@ main {
 
 .about-p {
     text-align: center;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.4;
 }
 
@@ -382,7 +382,6 @@ main {
     bottom: 20px;
     color: #2C464F;
     text-transform: uppercase;
-    font-weight: 300;
 }
 
 .contents-link {
@@ -646,7 +645,7 @@ label {
     text-transform: capitalize;
 }
 
-/* favouritestPage style */
+/* favouritest Page style */
 
 .h2-favouritest-us {
     display: flex;
@@ -662,7 +661,7 @@ label {
     font-weight: lighter;
     text-align: center;
     font-style: italic;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .about-field-page {
@@ -768,7 +767,7 @@ footer {
     /*  Main style  */
 
     .home-h1 {
-        font-size: 24px;
+        font-size: 28px;
         margin-top: 30px;
         margin-bottom: 35px;
     }
@@ -781,6 +780,10 @@ footer {
 
     .about-field, .about-field-page {
         margin-top: 95px;
+    }
+
+    .about-p {
+        font-size: 19px;
     }
 
     /* carousel style  */

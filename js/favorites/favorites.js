@@ -30,5 +30,3 @@ favourites.forEach(favourite => {
                                 </div>
                             </div>`;
 });
-
-
