@@ -32,8 +32,6 @@ function allPosts(post) {
         const title = post[i].title.rendered;
         const image = post[i].acf.image;
         const paragf = post[i].acf.Paragraph;
-
-
         let red = "far";
 
        const favouritesExist = favourites.find(function(fav) {
@@ -58,7 +56,11 @@ function allPosts(post) {
                                         </div>
                                     </div>`;
     }
+    
+    favouritesAdd()
+};
 
+function favouritesAdd() {
     const favButtons = document.querySelectorAll(".post i"); 
 
     favButtons.forEach((button) => {
@@ -88,13 +90,13 @@ function allPosts(post) {
             saveFavs(newfavourites);
         }
     } 
-};
+}
 
 const searchButton = document.querySelector(".search-btn")
+const searchInput = document.querySelector("#search");
 const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
 
-searchButton.onclick = function(e) {
-    e.preventDefault();
+searchButton.onclick = function() {
     const searchInput = document.querySelector("#search").value;
     const newurl = searchUrl + `?search=${searchInput}&acf_format=standard`;
     allPost.innerHTML = "";
@@ -102,19 +104,28 @@ searchButton.onclick = function(e) {
     getPost(newurl)
 }; 
 
+searchInput.addEventListener("keyup", function(event) {
+    const searchInputField = searchInput.value;
+    if(event.keyCode === 13)  {
+        searchButton.onclick();
+    } else if(searchInputField === "") {
+        allPost.innerHTML = "";
+        loading.classList.add("loading");
+        getPost(wpUrl)  
+    }
+});
+
 const showMoreBtn = document.querySelector(".show-more-btn");
 
 const newUrl = `http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12`
 
-showMoreBtn.onclick = function() {
-
+showMoreBtn.onclick = function(event) {
+    event.preventDefault();
     if (showMoreBtn.innerHTML === "Show More") {
         allPost.innerHTML = "";
         loading.classList.add("loading");
         showMoreBtn.innerHTML = "Show Less"
         getPost(newUrl)
-        window.scrollTo(0, 1000);
-        
     } else {
         allPost.innerHTML = "";
         loading.classList.add("loading");

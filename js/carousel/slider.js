@@ -8,7 +8,8 @@ let counter = 0;
 
 /* console.log(widthCard) */
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function(e) {
+    e.preventDefault();
     widthCard = slider.offsetWidth
 });
 
@@ -17,22 +18,18 @@ nextBtn.addEventListener("click", function () {
     prevBtn.style.display = "block" 
 
     movingCard.style.transform = "translateX(" + counter * -widthCard + "px)";
-    
     if  (movingCard.offsetWidth - (counter * widthCard) <  widthCard) {
         nextBtn.style.display = "none";
     } 
 });
 
 prevBtn.addEventListener("click", function () {
-
     counter--; 
 
     nextBtn.style.display = "block";
-    
     if (counter === 0) {
         prevBtn.style.display = "none";
     }
-
     movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
 }); 
 
