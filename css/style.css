@@ -661,7 +661,7 @@ label {
     font-weight: lighter;
     text-align: center;
     font-style: italic;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .about-field-page {
@@ -811,7 +811,13 @@ footer {
         width: 500px;
     }
 
-    /* All Posrs page style  */
+    /* about me Page style */
+
+    .about-h2 {
+        font-size: 28px;
+    }
+
+    /* All Posts page style  */
 
     .all-post {
         display: grid;
