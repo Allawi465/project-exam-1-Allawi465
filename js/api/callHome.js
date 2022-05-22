@@ -1,7 +1,7 @@
 const postontainer = document.querySelector(".card-slider");
 const loading = document.querySelector(".loading");
 
-const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
+const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
 
 async function getPost(url) {
     try {
@@ -28,7 +28,7 @@ function getPosts(posts) {
         postontainer.innerHTML += `<div class="card">
                                         <div class="post"> 
                                         <div class="background-image"><a href="post.html?id=${posts[i].id}">
-                                            <img src="${posts[i].acf.image}" class="image" alt=""></a>
+                                            <img src="${posts[i].acf.image.url}" class="image" alt="${posts[i].acf.image.alt}"></a>
                                         </div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${posts[i].title.rendered}</h3>
@@ -41,7 +41,7 @@ function getPosts(posts) {
 };
 
 const aboutContainer = document.querySelector(".about-container");
-const aboutUrl = "http://localhost/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";
+const aboutUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";
 
 async function getAboutInfo(url) {
     try {
@@ -50,7 +50,7 @@ async function getAboutInfo(url) {
         const aboutData = await response.json();
 
         aboutContainer.innerHTML += `<div class="about-backround"> 
-                                        <img class="about-image" src="${aboutData.acf.image}" alt="">
+                                        <img class="about-image" src="${aboutData.acf.image.url}" alt="${aboutData.acf.image.alt}">
                                     </div>
                                     <div class="about-field">
                                         <h4 class="about-h4">About me</h4>

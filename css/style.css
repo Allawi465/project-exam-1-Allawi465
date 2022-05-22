@@ -122,7 +122,11 @@ nav li {
 /* Main style  */
 
 main {
-    min-height: 70vh;
+    min-height: 75vh;
+}
+
+img:-moz-loading {
+    visibility: hidden;
 }
 
 .home-h1 {
@@ -206,6 +210,10 @@ main {
     border-radius: 10px;
     position: relative;
     transition: transform 500ms ease;
+}
+
+.background-image a {
+    color: #000000;
 }
 
 .image {
@@ -358,6 +366,10 @@ main {
     height: 100%;
     width: 100%;
     cursor: pointer;
+}
+
+.img-link {
+    color: #000000;
 }
 
 .contact-content {
@@ -519,7 +531,7 @@ main {
     text-align: center;
     font-weight: 300;
     font-style: italic;
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .single-post-text {
@@ -527,7 +539,6 @@ main {
 }
 
 .p-single-post {
-    text-align: center;
     font-size: 18px;
     line-height: 1.4;
 }

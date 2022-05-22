@@ -2,7 +2,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
+const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
 
 async function singlePost(url) {
     try {
@@ -12,7 +12,6 @@ async function singlePost(url) {
 
         createHtml(post)
         showImages(post)
-    
     } 
     catch(error) {
        /*  allPost.innerHTML = `<p> An error occurred when showing the Games</p>` */
@@ -29,7 +28,7 @@ function createHtml(post) {
     postContainer.innerHTML =  `<h2 class="single-post-h2">Destination | ${post.title.rendered} </h2>
                                 <div class="single-post-container">
                                     <div class="single-img">
-                                        <img src="${post.acf.FeaturedImage}" class="post-images" alt="" id="images">
+                                        <img src="${post.acf.FeaturedImage.url}" class="post-images" alt="${post.acf.FeaturedImage.alt}" id="images">
                                     </div>
                                     <div class="single-post-text">
                                         <h3 class="h3-single-post">${post.acf.paragraph2}</h3>
@@ -41,14 +40,15 @@ function createHtml(post) {
                                     </div>
                                 </div>
                                 <div class="futured-img">
-                                    <img src="${post.acf.image}" class="post-images-futured" alt="" id="images">
+                                    <img src="${post.acf.image.url}" class="post-images-futured" alt="${post.acf.image.alt}" id="images">
                                 </div>`;
 };
 
+const popup = document.querySelector(".popup-images");
+const popImages = document.querySelector(".pop-image");
+
 function showImages() {
-    const popup = document.querySelector(".popup-images");
-    let img = document.querySelectorAll(".single-post img");
-    const popImages = document.querySelector(".pop-image");
+    const img = document.querySelectorAll(".single-post img");
 
     img.forEach(image => {
         image.onclick = () => {
@@ -66,8 +66,6 @@ function closePopImage() {
     close.onclick = () => {
         document.querySelector(".popup-images").style.display = "none";
     }
-
-    const popup = document.querySelector(".popup-images");
 
     popup.onclick = () => {
         document.querySelector(".popup-images").style.display = "none";

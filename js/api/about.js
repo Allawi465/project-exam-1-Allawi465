@@ -1,6 +1,6 @@
 const aboutContainer = document.querySelector(".about-container");
 const loading = document.querySelector(".loading");
-const aboutUrl = "http://localhost/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";
+const aboutUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";
 
 async function getAboutInfo(url) {
     try {
@@ -11,7 +11,7 @@ async function getAboutInfo(url) {
         loading.classList.remove("loading");
 
         aboutContainer.innerHTML += `<div class="about-backround"> 
-                                        <img class="about-image" src="${data.acf.faturedimage}" alt="">
+                                        <img class="about-image" src="${data.acf.faturedimage.url}" alt="${data.acf.faturedimage.alt}">
                                     </div>
                                     <div class="about-field-page">
                                         <h2 class="about-h2">${data.acf.paragf}</h2>

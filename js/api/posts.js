@@ -2,13 +2,14 @@ import { existingFavs, saveFavs  } from "../localStorage/favor.js";
 const allPost = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
 
-const wpUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
+const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
 
 async function getPost(url) {
     try {
         const response = await fetch(url);
         
         const post = await response.json();
+        console.log(post)
 
         allPosts(post)
     } 
@@ -30,8 +31,10 @@ function allPosts(post) {
     
         const id = post[i].id;
         const title = post[i].title.rendered;
-        const image = post[i].acf.image;
+        const image = post[i].acf.image.url;
         const paragf = post[i].acf.Paragraph;
+        const altText = post[i].acf.image.alt;
+     
         let red = "far";
 
        const favouritesExist = favourites.find(function(fav) {
@@ -45,9 +48,9 @@ function allPosts(post) {
         allPost.innerHTML += `<div class="card">
                                         <div class="post"> 
                                             <div class="background-image">
-                                                <a href="post.html?id=${post[i].id}"><img src="${post[i].acf.image}" class="image" alt=""></a>
+                                                <a href="post.html?id=${post[i].id}"><img src="${post[i].acf.image.url}" class="image" alt="${post[i].acf.image.alt}"></a>
                                             </div>
-                                            <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"></i></div>
+                                            <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"data-alt="${altText}"></i></div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${post[i].title.rendered}</h3>
                                                 <p class="post-paragf">${post[i].acf.Paragraph}</p>
@@ -73,6 +76,7 @@ function favouritesAdd() {
         const name = this.dataset.name;
         const id = this.dataset.id;
         const image = this.dataset.image;
+        const alt = this.dataset.alt;
         const paragf = this.dataset.paragf;
         
         const currentFavourites = existingFavs();
@@ -82,7 +86,7 @@ function favouritesAdd() {
         })
 
         if (destinationEcists === undefined) {
-            const product = { id: id, name: name, image: image, paragf: paragf};
+            const product = { id: id, name: name, image: image, paragf: paragf, alt: alt};
             currentFavourites.push(product);
             saveFavs(currentFavourites);
         } else {
@@ -94,7 +98,7 @@ function favouritesAdd() {
 
 const searchButton = document.querySelector(".search-btn")
 const searchInput = document.querySelector("#search");
-const searchUrl = "http://localhost/blog-travel/wp-json/wp/v2/destinations";
+const searchUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations";
 
 searchButton.onclick = function() {
     const searchInput = document.querySelector("#search").value;
@@ -117,7 +121,7 @@ searchInput.addEventListener("keyup", function(event) {
 
 const showMoreBtn = document.querySelector(".show-more-btn");
 
-const newUrl = `http://localhost/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12`
+const newUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
 
 showMoreBtn.onclick = function(event) {
     event.preventDefault();

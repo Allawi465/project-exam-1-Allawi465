@@ -4,7 +4,6 @@ const favContainer = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
 const message = document.querySelector("#formMessage");
 
-
 const favourites = existingFavs();
 
 
@@ -19,7 +18,7 @@ favourites.forEach(favourite => {
     favContainer.innerHTML += `<div class="card">
                                 <div class="post"> 
                                     <div class="background-image">
-                                        <a href="post.html?id=${favourite.id}"><img src="${favourite.image}" class="image" alt=""></a>
+                                        <a href="post.html?id=${favourite.id}"><img src="${favourite.image}" class="image" alt="${favourite.alt}"></a>
                                     </div>
                                     <div class="heart-container"><i class="fa fa-heart"></i></div>
                                     <div class="post-content">
