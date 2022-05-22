@@ -9,7 +9,6 @@ async function getPost(url) {
         const response = await fetch(url);
         
         const post = await response.json();
-        console.log(post)
 
         allPosts(post)
     } 
