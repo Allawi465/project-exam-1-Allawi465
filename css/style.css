@@ -424,12 +424,11 @@ img:-moz-loading {
     display: flex;
     position: relative;
     border: 1px solid rgba(128, 128, 128, 0.485);
-    padding: 1px;
     border-radius: 10px;
 }
 
 #search {
-  padding: 10px;
+  padding: 8px;
   font-size: 17px;
   border: none;
   width: 90%;
@@ -442,12 +441,12 @@ img:-moz-loading {
     cursor: pointer;
     text-align: center;
     border-radius: 50%;
-    margin-left: 2px;
     color: #ffffff;
     font-size: 20px;
     display: inline-block;
-    width: 50px;
-    line-height: 50px;
+    width: 45px;
+    line-height: 45px;
+    margin: 2px 2px 2px 0;
 }
 
 .post-container {
@@ -706,8 +705,7 @@ footer {
     text-align: center;
     line-height: 50px;
     border-radius: 50%;
-    color: #ffffff;
-    transition: 0.5s ease;
+    color: #ffffff;;
     margin-bottom: 25px;
 }
 
