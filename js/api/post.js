@@ -35,7 +35,7 @@ function createHtml(post) {
                                         <p class="p-single-post">${post.acf.Text}</p>
                                         <p class="p-single-post">${post.acf.moretext}</p>
                                         <div class="view-btn-single">
-                                            <a href="posts.html" class="View-all">View More Post</a>
+                                            <a href="posts.html" class="View-all">View More Posts</a>
                                         </div>
                                     </div>
                                 </div>

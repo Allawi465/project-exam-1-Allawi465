@@ -47,7 +47,7 @@ function allPosts(post) {
         allPost.innerHTML += `<div class="card">
                                         <div class="post"> 
                                             <div class="background-image">
-                                                <a href="post.html?id=${post[i].id}"><img src="${post[i].acf.image.url}" class="image" alt="${post[i].acf.image.alt}"></a>
+                                                <img src="${post[i].acf.image.url}" class="image" alt="${post[i].acf.image.alt}">
                                             </div>
                                             <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"data-alt="${altText}"></i></div>
                                             <div class="post-content">
@@ -58,7 +58,6 @@ function allPosts(post) {
                                         </div>
                                     </div>`;
     }
-    
     favouritesAdd()
 };
 
