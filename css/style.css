@@ -60,7 +60,7 @@ nav li {
     text-transform: uppercase;
     margin-left: 15px;
     transition: transform 0.5s ease-in;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .nav-hide {
@@ -420,27 +420,33 @@ img:-moz-loading {
 
 .search-container {
     max-width: 450px;
-    background-color: #7f2c2c;
+ /*    background-color: #7f2c2c; */
     margin: 20px auto;
     display: flex;
     position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.485);
+    padding: 1px;
+    border-radius: 10px;
 }
 
 #search {
   padding: 10px;
   font-size: 17px;
-  border: 1px solid #f1f1f1;
-  background: #f1f1f1;
+  border: none;
   width: 90%;
+  border-radius: 10px;
 }
 
 .search-btn {
+    background-color: #7f2c2c;
     border: none;
     cursor: pointer;
-    background-color: transparent;
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 40px;
     border-radius: 50%;
+    margin-left: 2px;
     color: #ffffff;
     font-size: 20px;
 }
@@ -688,7 +694,7 @@ footer {
     text-transform: uppercase;
     margin-left: 20px;
     transition: transform 0.5s ease-in;
-    font-size: 14px;
+    font-size: 17px;
     display: inline-block;
     height: 35px;
 }
@@ -756,7 +762,7 @@ footer {
     }
 
     .nav_link {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .nav-hide {
@@ -852,7 +858,7 @@ footer {
 
     .footer_link {
         margin-left: 50px;
-        font-size: 17px;
+        font-size: 18px;
     }
 }
 
@@ -893,15 +899,6 @@ footer {
 
     .card {
         margin-left: 11px;
-    }
-
-    .next-btn {
-        right: 0; 
-       
-    }
-    
-    .pre-btn {
-  
     }
 
     .about-field {
