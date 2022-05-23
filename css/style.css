@@ -420,7 +420,6 @@ img:-moz-loading {
 
 .search-container {
     max-width: 450px;
- /*    background-color: #7f2c2c; */
     margin: 20px auto;
     display: flex;
     position: relative;
@@ -441,14 +440,14 @@ img:-moz-loading {
     background-color: #7f2c2c;
     border: none;
     cursor: pointer;
-    width: 45px;
-    height: 45px;
     text-align: center;
-    line-height: 40px;
     border-radius: 50%;
     margin-left: 2px;
     color: #ffffff;
     font-size: 20px;
+    display: inline-block;
+    width: 50px;
+    line-height: 50px;
 }
 
 .post-container {
