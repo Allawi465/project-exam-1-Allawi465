@@ -8,7 +8,7 @@ body {
 /* Header style */
 
 header {
-    height: 90px;
+    height: 110px;
 }
   
 .topHeader {
@@ -17,24 +17,17 @@ header {
     align-items: center;
     box-sizing: border-box;
     justify-content: space-between;
-    height: 90px;
+    height: 110px;
     background: #F2F0EB;
 }
 
 .logo {
-    text-transform: uppercase;
-    margin-left: 20px;
-    font-size: 29px;
-    color: #333333e1;
-    margin-left: 20px;
-    text-decoration-line: overline;
-    font-weight: bold;
-    font-style: italic;
+    height: 100px;
 }
   
 nav {
     position: absolute;
-    top: 90px;
+    top: 110px;
     background-color: #F2F0EB;
     display: none;
     flex-direction: column;
@@ -428,17 +421,17 @@ img:-moz-loading {
 
 .search-container {
     max-width: 450px;
-    background-color: #7f2c2c;
+    border: solid 1px;
     margin: 20px auto;
     display: flex;
     position: relative;
+    padding: 2px;
 }
 
 #search {
   padding: 10px;
   font-size: 17px;
-  border: 1px solid #f1f1f1;
-  background: #f1f1f1;
+  border: none;
   width: 90%;
 }
 
@@ -449,6 +442,7 @@ img:-moz-loading {
     width: 42px;
     height: 42px;
     border-radius: 50%;
+    background: #591C1C;
     color: #ffffff;
     font-size: 20px;
 }
@@ -721,8 +715,7 @@ footer {
     /* Header style  */
 
     .logo {
-        margin-left: 50px;
-        font-size: 35px;
+        padding-left: 50px;
     }
     
     nav {
