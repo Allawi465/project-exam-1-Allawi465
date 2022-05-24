@@ -47,10 +47,11 @@ nav {
   
 nav ul {
     border: none;
+    padding-right: 36px;
 }
   
 nav li {
-    display: block;
+    display: flex;
     padding: 25px 0;
 }
     
@@ -58,7 +59,6 @@ nav li {
     color: #000000;
     text-decoration: none;
     text-transform: uppercase;
-    margin-left: 15px;
     transition: transform 0.5s ease-in;
     font-size: 17px;
 }
@@ -595,7 +595,7 @@ img:-moz-loading {
 
 .pop-image {
     position: absolute;
-    top: 40%; left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
     max-height: 500px;
@@ -734,8 +734,9 @@ footer {
     
     nav ul {
         display: flex;
-        gap: 10px;
+        gap: 32px;
         flex-wrap: wrap;
+        padding-right: unset;
     }
       
     nav li {
