@@ -136,3 +136,4 @@ showMoreBtn.onclick = function(event) {
         getPost(wpUrl)
     }
 };
+
