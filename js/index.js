@@ -13,11 +13,11 @@
         if (window.innerWidth <= 1082) {
             header.classList.remove("headerHeight");
             nav.classList.remove("aktiv");
-            hamburger.classList.remove("burger");
+            hamburger.classList.remove("burger"); 
         } else {
             header.classList.add("header_responsive");
             nav.classList.remove("aktiv");
-            hamburger.classList.add("hamburge_responsiver");
+            hamburger.classList.add("hamburger"); 
         }
       });
 };
