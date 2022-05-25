@@ -1,5 +1,5 @@
 import { existingFavs } from "../localStorage/favor.js"; 
-
+import { navOpenClos } from "../index.js";
 const favContainer = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
 const message = document.querySelector("#formMessage");
@@ -28,3 +28,5 @@ favourites.forEach(favourite => {
                                 </div>
                             </div>`;
 });
+
+navOpenClos()

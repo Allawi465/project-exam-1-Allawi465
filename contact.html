@@ -1,126 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Explore It | Contact page</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta 
-        name="description" 
-        content="This is the contact page for Explore It, travel blog" 
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;1,100;1,300;1,700&family=Source+Sans+Pro:ital,wght@0,400;1,600;1,700&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="css\style.css"/>
-    <script
-        src="https://kit.fontawesome.com/a2e814cf6f.js" crossorigin="anonymous">
-    </script>
-     <!-- Hotjar Tracking Code for https://treavelit.netlify.app/ -->
-     <script>
-        (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2981174,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-</head>
-<body>
-    <header>
-        <div class="topHeader">
-            <div class="logo-container">
-                <a href="index.html" ><img class="logo" src="/images/logo.png" alt="Explore It logo"></a>
+    <head>
+        <title>Explore It | Contact page</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta 
+            name="description" 
+            content="This is the contact page for Explore It, travel blog" 
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;1,100;1,300;1,700&family=Source+Sans+Pro:ital,wght@0,400;1,600;1,700&display=swap" rel="stylesheet">    
+        <link rel="stylesheet" href="css/style.css"/>
+        <script
+            src="https://kit.fontawesome.com/a2e814cf6f.js" crossorigin="anonymous">
+        </script>
+        <!-- Hotjar Tracking Code for https://treavelit.netlify.app/ -->
+        <script>
+            (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2981174,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="topHeader">
+                <div class="logo-container">
+                    <a href="index.html" ><img class="logo" src="/images/logo.png" alt="Explore It logo"></a>
+                </div>
+                <div class="top-nav">
+                    <div class="heart">
+                        <a class="heart-link" href="favorite.html"><i class="fa fa-heart"></i></a>
+                    </div>
+                    <div class="hamburger">
+                        <div class="first"></div>
+                        <div class="second"></div>
+                        <div class="third"></div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="nav_link" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav_link" href="posts.html">Posts</a>
+                        </li>
+                        <li class="nav-hide">
+                            <a class="nav_link" href="favorite.html">favorite</a>
+                        </li>
+                        <li>
+                            <a class="nav_link" href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="nav_link" id="active" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="top-nav">
-                <div class="heart">
-                    <a class="heart-link" href="favorite.html"><i class="fa fa-heart"></i></a>
-                </div>
-                <div class="hamburger">
-                    <div class="first"></div>
-                    <div class="second"></div>
-                    <div class="third"></div>
-                </div>
+        </header>
+        <main>
+            <h1 class="home-h1">Contact Us</h1>
+            <h2 class="h2-contact-us">Send us a message and we’ll get back to you within 24 hours.</h2>
+            <div class="container-form">
+                <div id="formMessage"></div>
+                <form id="form" name="contact-form">
+                    <div>
+                        <label>
+                            Your Name
+                            <input name="your-name" id="yourname"/>
+                        </label>
+                        <div class="formError" id="nameError">* Name (minimum 5 characters)</div>
+                    </div>
+                    <div>
+                        <label>
+                            Email 
+                            <input name="your-email" id="email"/>
+                        </label>
+                        <div class="formError" id="eMailError">* Please enter a valid email address</div>
+                    </div>
+                    <div>
+                        <label>
+                            Subject
+                            <input name="your-subject" id="subject"/>
+                        </label>
+                        <div class="formError" id="subjectError">* Subject (minimum 15 characters)</div>
+                    </div>
+                    <div>
+                        <label>
+                            Message
+                            <textarea name="your-message" id="message" cols="30" rows="5"></textarea> 
+                        </label>    
+                        <div class="formError" id="messageError">* The Message must be at least 25 characters</div>
+                    </div>
+                    <div class="continue">
+                    <input type="submit" class="submit" value="Send"/>
+                    </div>
+                </form>
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a class="nav_link" href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav_link" href="posts.html">Posts</a>
-                    </li>
-                    <li class="nav-hide">
-                        <a class="nav_link" href="favorite.html">favorite</a>
-                    </li>
-                    <li>
-                        <a class="nav_link" href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a class="nav_link" id="active" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <h1 class="home-h1">Contact Us</h1>
-        <h2 class="h2-contact-us">Send us a message and we’ll get back to you within 24 hours.</h2>
-        <div class="container-form">
-            <div id="formMessage"></div>
-            <form id="form" name="contact-form">
-                <div>
-                    <label>
-                        Your Name
-                        <input name="your-name" id="yourname"/>
-                    </label>
-                    <div class="formError" id="nameError">* Name (minimum 5 characters)</div>
-                </div>
-                <div>
-                    <label>
-                        Email 
-                        <input name="your-email" id="email"/>
-                    </label>
-                    <div class="formError" id="eMailError">* Please enter a valid email address</div>
-                </div>
-                <div>
-                    <label>
-                        Subject
-                        <input name="your-subject" id="subject"/>
-                    </label>
-                    <div class="formError" id="subjectError">* Subject (minimum 15 characters)</div>
-                </div>
-                <div>
-                    <label>
-                        Message
-                        <textarea name="your-message" id="message" cols="30" rows="5"></textarea> 
-                    </label>    
-                    <div class="formError" id="messageError">* The Message must be at least 25 characters</div>
-                </div>
-                <div class="continue">
-                <input type="submit" class="submit" value="Send"/>
-                </div>
-            </form>
-        </div>
-    </main>
-    <footer>
-        <div class="footer_links">
-            <a class="footer_link" href="posts.html">Posts</a>
-            <a class="footer_link" href="favorite.html">Favorite</a>
-            <a class="footer_link" href="about.html">About</a>
-            <a class="footer_link" id="active" href="contact.html">Contact</a>
-        </div>
-        <div class="social-links">
-            <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-            <a href="https://nb-no.facebook.com/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="copiright-footer"> Explore It &copy; Copyright</div>
-    </footer>
-</body>
-<script src="js/index.js"></script>
-<script src="js/form/contactForm.js"></script>
+        </main>
+        <footer>
+            <div class="footer_links">
+                <a class="footer_link" href="posts.html">Posts</a>
+                <a class="footer_link" href="favorite.html">Favorite</a>
+                <a class="footer_link" href="about.html">About</a>
+                <a class="footer_link" id="active_bottom" href="contact.html">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://nb-no.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="copiright-footer"> Explore It &copy; Copyright</div>
+        </footer>
+        <script src="js/form/contactForm.js" type="module"></script>
+    </body>
 </html>

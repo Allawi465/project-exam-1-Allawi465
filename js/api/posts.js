@@ -1,7 +1,7 @@
 import { existingFavs, saveFavs  } from "../localStorage/favor.js"; 
+import { navOpenClos } from "../index.js";
 const allPost = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
-
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
 
 async function getPost(url) {
@@ -18,6 +18,7 @@ async function getPost(url) {
     }
 };
 
+navOpenClos()
 getPost(wpUrl)
 
 function allPosts(post) {

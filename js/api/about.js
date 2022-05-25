@@ -1,3 +1,4 @@
+import { navOpenClos } from "../index.js";
 const aboutContainer = document.querySelector(".about-container");
 const loading = document.querySelector(".loading");
 const aboutUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";
@@ -27,4 +28,6 @@ async function getAboutInfo(url) {
     }
 };
 
+
+navOpenClos()
 getAboutInfo(aboutUrl)

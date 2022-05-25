@@ -63,7 +63,7 @@ nav li {
     font-size: 17px;
 }
 
-#active {
+#active, #active_bottom {
     font-weight: bolder;
 }
 

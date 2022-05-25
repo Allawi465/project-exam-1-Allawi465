@@ -1,5 +1,8 @@
+import { navOpenClos } from "../index.js";
 const postontainer = document.querySelector(".card-slider");
 const loading = document.querySelector(".loading");
+
+navOpenClos()
 
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
 
