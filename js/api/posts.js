@@ -2,6 +2,8 @@ import { existingFavs, saveFavs  } from "../localStorage/favor.js";
 import { navOpenClos } from "../index.js";
 const allPost = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
+const message = document.querySelector(".post-container")
+
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
 
 async function getPost(url) {
@@ -13,7 +15,7 @@ async function getPost(url) {
         allPosts(post)
     } 
     catch(error) {
-       /*  allPost.innerHTML = `<p> An error occurred when showing the Games</p>` */
+        message.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`
        console.log(error)
     }
 };
@@ -22,8 +24,6 @@ navOpenClos()
 getPost(wpUrl)
 
 function allPosts(post) {
-
-    const favourites = existingFavs();
 
     loading.classList.remove("loading");
 
@@ -34,9 +34,10 @@ function allPosts(post) {
         const image = post[i].acf.image.url;
         const paragf = post[i].acf.Paragraph;
         const altText = post[i].acf.image.alt;
-     
-        let red = "far";
 
+        const favourites = existingFavs();
+        let red = "far";
+        
        const favouritesExist = favourites.find(function(fav) {
             return parseInt(fav.id) === id;
         });
@@ -50,7 +51,7 @@ function allPosts(post) {
                                             <div class="background-image">
                                                 <img src="${post[i].acf.image.url}" class="image" alt="${post[i].acf.image.alt}">
                                             </div>
-                                            <div class="heart-container"><i class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"data-alt="${altText}"></i></div>
+                                            <div class="heart-container"><i title="add to favourite" class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"data-alt="${altText}"></i></div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${post[i].title.rendered}</h3>
                                                 <p class="post-paragf">${post[i].acf.Paragraph}</p>
@@ -129,6 +130,7 @@ showMoreBtn.onclick = function(event) {
         loading.classList.add("loading");
         showMoreBtn.innerHTML = "Show Less"
         getPost(newUrl)
+        scrollToBottom()
     } else {
         allPost.innerHTML = "";
         loading.classList.add("loading");
@@ -137,3 +139,9 @@ showMoreBtn.onclick = function(event) {
     }
 };
 
+function scrollToBottom() {
+    setTimeout(function(){
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 500);
+
+};

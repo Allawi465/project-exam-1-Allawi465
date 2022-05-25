@@ -1,12 +1,10 @@
-const slider   = document.querySelector(".slider-container")
-const movingCard   = document.querySelector(".card-slider")
+const slider = document.querySelector(".slider-container");
+const movingCard = document.querySelector(".card-slider");
 const prevBtn = document.querySelector(".pre-btn");
 const nextBtn = document.querySelector(".next-btn");
 
 let widthCard = slider.offsetWidth;
 let counter = 0;
-
-/* console.log(widthCard) */
 
 window.addEventListener("resize", function(e) {
     e.preventDefault();

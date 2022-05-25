@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -124,6 +128,11 @@ main {
 
 img:-moz-loading {
     visibility: hidden;
+}
+
+.apiError {
+    display: flex;
+    justify-content: center;
 }
 
 .home-h1 {
@@ -920,7 +929,7 @@ footer {
 /*  media query on hover  */
 
 @media (hover) {
-
+    
     .post-content {
         transform: translateY(25%);
         transition: transform 500ms ease;

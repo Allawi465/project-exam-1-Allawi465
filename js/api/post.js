@@ -1,4 +1,5 @@
 import { navOpenClos } from "../index.js";
+const postContainer = document.querySelector(".single-post");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -15,8 +16,7 @@ async function singlePost(url) {
         showImages(post)
     } 
     catch(error) {
-       /*  allPost.innerHTML = `<p> An error occurred when showing the Games</p>` */
-    /*    console.log(error) */
+        postContainer.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`
     }
 };
 
@@ -24,8 +24,6 @@ navOpenClos()
 singlePost(wpUrl)
 
 function createHtml(post) {
-
-    const postContainer = document.querySelector(".single-post");
 
     postContainer.innerHTML =  `<h2 class="single-post-h2">Destination | ${post.title.rendered} </h2>
                                 <div class="single-post-container">

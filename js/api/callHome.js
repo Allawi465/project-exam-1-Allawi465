@@ -1,6 +1,7 @@
 import { navOpenClos } from "../index.js";
 const postontainer = document.querySelector(".card-slider");
 const loading = document.querySelector(".loading");
+const message = document.querySelector(".inner-slider");
 
 navOpenClos()
 
@@ -15,8 +16,7 @@ async function getPost(url) {
         getPosts(posts)
     } 
     catch(error) {
-       /*  postontainer.innerHTML = `<p> An error occurred when showing the Games</p>` */
-       console.log(error)
+        message.innerHTML =  `<p class="apiError"> We thank you for your patience while we are working to correct the problem</p>`
     }
 };
 
@@ -65,7 +65,7 @@ async function getAboutInfo(url) {
                                     </div>`; 
     } 
     catch(error) {
-       /*  postontainer.innerHTML = `<p> An error occurred when showing the Games</p>` */
+       aboutContainer.innerHTML =  `<p>We thank you for your patience while we are working to correct the problem</p>`
     }
 };
 
