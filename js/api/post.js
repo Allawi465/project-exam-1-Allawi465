@@ -4,6 +4,9 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+/* hamburger menu dropdown navbar */
+navOpenClos()
+
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
 
 async function singlePost(url) {
@@ -20,7 +23,6 @@ async function singlePost(url) {
     }
 };
 
-navOpenClos()
 singlePost(wpUrl)
 
 function createHtml(post) {
@@ -44,6 +46,8 @@ function createHtml(post) {
                                 </div>`;
 };
 
+/* pop image onclick funvtion using outerHTML property*/
+
 const popup = document.querySelector(".popup-images");
 const popImages = document.querySelector(".pop-image");
 
@@ -59,6 +63,8 @@ function showImages() {
 
     closePopImage()
 }
+
+/* close when clicking outside the imgae or the X icon */
 
 function closePopImage() {
     const close = document.querySelector(".close-images"); 

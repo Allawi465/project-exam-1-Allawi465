@@ -7,9 +7,12 @@ const subject = document.querySelector("#subject");
 const messageBox = document.querySelector("#message");
 const message = document.querySelector("#formMessage");
 
+/* hamburger menu dropdown navbar */
+navOpenClos()
+
+/* Post the data to wordprss */
 
 form.addEventListener("submit", formSetup);
-navOpenClos()
 
 const formUrl = "http://localhost/blog-travel/wp-json/contact-form-7/v1/contact-forms/103/feedback";
 
@@ -30,6 +33,8 @@ async function contactForm (event) {
 
     }); 
 };
+
+/* form validation */
 
 function formSetup(event) {
     event.preventDefault();

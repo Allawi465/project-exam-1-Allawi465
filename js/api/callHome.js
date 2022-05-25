@@ -3,6 +3,7 @@ const postontainer = document.querySelector(".card-slider");
 const loading = document.querySelector(".loading");
 const message = document.querySelector(".inner-slider");
 
+/* hamburger menu dropdown navbar */
 navOpenClos()
 
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
@@ -42,6 +43,8 @@ function getPosts(posts) {
                                     </div>`;
     }
 };
+
+/* call api to get about post page to index.html */
 
 const aboutContainer = document.querySelector(".about-container");
 const aboutUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";

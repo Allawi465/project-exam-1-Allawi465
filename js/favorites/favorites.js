@@ -1,11 +1,13 @@
 import { existingFavs } from "../localStorage/favor.js"; 
 import { navOpenClos } from "../index.js";
+
 const favContainer = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
 const message = document.querySelector("#formMessage");
-
 const favourites = existingFavs();
 
+/* hamburger menu dropdown navbar */
+navOpenClos()
 
 if (favourites.length === 0) {
     message.innerHTML = `<h2 class="h2-favouritest-us">Choose your favourites from Posts page!</h2>` 
@@ -28,5 +30,3 @@ favourites.forEach(favourite => {
                                 </div>
                             </div>`;
 });
-
-navOpenClos()

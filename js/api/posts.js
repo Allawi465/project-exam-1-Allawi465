@@ -2,7 +2,10 @@ import { existingFavs, saveFavs  } from "../localStorage/favor.js";
 import { navOpenClos } from "../index.js";
 const allPost = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
-const message = document.querySelector(".post-container")
+const message = document.querySelector(".post-container");
+
+/* hamburger menu dropdown navbar */
+navOpenClos()
 
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
 
@@ -20,7 +23,6 @@ async function getPost(url) {
     }
 };
 
-navOpenClos()
 getPost(wpUrl)
 
 function allPosts(post) {
@@ -51,7 +53,7 @@ function allPosts(post) {
                                             <div class="background-image">
                                                 <img src="${post[i].acf.image.url}" class="image" alt="${post[i].acf.image.alt}">
                                             </div>
-                                            <div class="heart-container"><i title="add to favourite" class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"data-alt="${altText}"></i></div>
+                                            <div class="heart-container"><i title="add to favorite" class="${red} fa-heart" data-id="${id}" data-name="${title}" data-image="${image}" data-paragf="${paragf}"data-alt="${altText}"></i></div>
                                             <div class="post-content">
                                                 <h3 class="post-title">${post[i].title.rendered}</h3>
                                                 <p class="post-paragf">${post[i].acf.Paragraph}</p>
@@ -62,6 +64,8 @@ function allPosts(post) {
     }
     favouritesAdd()
 };
+
+/* add to favorite function */
 
 function favouritesAdd() {
     const favButtons = document.querySelectorAll(".post i"); 
@@ -86,8 +90,8 @@ function favouritesAdd() {
         })
 
         if (destinationEcists === undefined) {
-            const product = { id: id, name: name, image: image, paragf: paragf, alt: alt};
-            currentFavourites.push(product);
+            const info = { id: id, name: name, image: image, paragf: paragf, alt: alt};
+            currentFavourites.push(info);
             saveFavs(currentFavourites);
         } else {
             const newfavourites = currentFavourites.filter(fav => fav.id !== id);
@@ -95,6 +99,8 @@ function favouritesAdd() {
         }
     } 
 }
+
+/* search button onclick */
 
 const searchButton = document.querySelector(".search-btn")
 const searchInput = document.querySelector("#search");
@@ -108,6 +114,8 @@ searchButton.onclick = function() {
     getPost(newurl)
 }; 
 
+/* search Input keyup making the Enter key active and if the search field empty get a new url */
+
 searchInput.addEventListener("keyup", function(event) {
     const searchInputField = searchInput.value;
     if(event.keyCode === 13)  {
@@ -119,8 +127,9 @@ searchInput.addEventListener("keyup", function(event) {
     }
 });
 
-const showMoreBtn = document.querySelector(".show-more-btn");
+/* show more button getting per page number */
 
+const showMoreBtn = document.querySelector(".show-more-btn");
 const newUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
 
 showMoreBtn.onclick = function(event) {
@@ -139,9 +148,10 @@ showMoreBtn.onclick = function(event) {
     }
 };
 
+/* show more button scrollto */
+
 function scrollToBottom() {
     setTimeout(function(){
             window.scrollTo(0, document.body.scrollHeight);
-        }, 500);
-
+        }, 400);
 };
