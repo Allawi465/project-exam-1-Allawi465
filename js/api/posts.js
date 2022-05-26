@@ -154,5 +154,5 @@ showMoreBtn.onclick = function(event) {
 function scrollToBottom() {
     setTimeout(function(){
             window.scrollTo(0, document.body.scrollHeight);
-        }, 600);
+        }, 800);
 };
