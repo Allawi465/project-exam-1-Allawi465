@@ -62,6 +62,7 @@ function allPosts(post) {
                                         </div>
                                     </div>`;
     }
+    
     favouritesAdd()
 };
 
@@ -114,7 +115,7 @@ searchButton.onclick = function() {
     getPost(newurl)
 }; 
 
-/* search Input keyup making the Enter key active and if the search field empty get a new url */
+/* search Input keyup making the Enter key active and if the search field empty get the old url */
 
 searchInput.addEventListener("keyup", function(event) {
     const searchInputField = searchInput.value;
@@ -127,7 +128,7 @@ searchInput.addEventListener("keyup", function(event) {
     }
 });
 
-/* show more button getting per page number */
+/* show more button getting per page */
 
 const showMoreBtn = document.querySelector(".show-more-btn");
 const newUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
@@ -153,5 +154,5 @@ showMoreBtn.onclick = function(event) {
 function scrollToBottom() {
     setTimeout(function(){
             window.scrollTo(0, document.body.scrollHeight);
-        }, 400);
+        }, 700);
 };

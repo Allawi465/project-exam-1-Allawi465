@@ -1,5 +1,4 @@
 import { navOpenClos } from "../index.js";
-
 const form = document.querySelector("form");
 const fullName = document.querySelector("#yourname");
 const eMail = document.querySelector("#email");
