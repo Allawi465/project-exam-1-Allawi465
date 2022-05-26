@@ -143,7 +143,6 @@ showMoreBtn.onclick = function(event) {
         scrollToBottom()
     } else {
         allPost.innerHTML = "";
-        loading.classList.add("loading");
         showMoreBtn.innerHTML = "Show More"
         getPost(wpUrl)
     }
@@ -154,5 +153,5 @@ showMoreBtn.onclick = function(event) {
 function scrollToBottom() {
     setTimeout(function(){
             window.scrollTo(0, document.body.scrollHeight);
-        }, 800);
+        }, 700);
 };

@@ -46,10 +46,11 @@ function createHtml(post) {
                                 </div>`;
 };
 
-/* pop image onclick funvtion using outerHTML property*/
+/* pop image onclick funvtion using outerHTML property */
 
 const popup = document.querySelector(".popup-images");
 const popImages = document.querySelector(".pop-image");
+const close = document.querySelector(".close-images"); 
 
 function showImages() {
     const img = document.querySelectorAll(".single-post img");
@@ -59,21 +60,15 @@ function showImages() {
             popup.style.display = "block";
             popImages.innerHTML = image.outerHTML;
         }
-    });
-
-    closePopImage()
-}
+    })
+};
 
 /* close when clicking outside the imgae or the X icon */
 
-function closePopImage() {
-    const close = document.querySelector(".close-images"); 
+close.onclick = () => {
+    popup.style.display = "none";
+};
 
-    close.onclick = () => {
-        document.querySelector(".popup-images").style.display = "none";
-    }
-
-    popup.onclick = () => {
-        document.querySelector(".popup-images").style.display = "none";
-    }
+popup.onclick = () => {
+    popup.style.display = "none";
 };

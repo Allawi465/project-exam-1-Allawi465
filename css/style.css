@@ -6,7 +6,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-family: Roboto, sans-serif, Tahoma;
+    font-family: Roboto, sans-serif, Tahoma, verdana;
 }
 
 /* Header style */
