@@ -129,10 +129,6 @@ img:-moz-loading {
     visibility: hidden;
 }
 
-.search-btn:-moz-loading {
-    visibility: hidden;
-}
-
 .apiError {
     display: flex;
     justify-content: center;
