@@ -545,7 +545,7 @@ img:-moz-loading {
 }
 
 .single-post-text {
-    max-width: 600px;
+    max-width: 550px;
 }
 
 .p-single-post {
@@ -607,7 +607,6 @@ img:-moz-loading {
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 550px;
-    max-height: 500px;
 }
 
 /* contact us Page style */
@@ -850,7 +849,6 @@ footer {
     }
 
     .single-post-text {
-        max-width: 620px;
         position: relative;
         left: 20px; top: 20px;
     }

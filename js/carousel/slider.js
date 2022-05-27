@@ -3,6 +3,8 @@ const movingCard = document.querySelector(".card-slider");
 const prevBtn = document.querySelector(".pre-btn");
 const nextBtn = document.querySelector(".next-btn");
 
+prevBtn.style.display = "none";
+
 /* responsive carousel using the offsetWidth property */
 
 let widthCard = slider.offsetWidth;
@@ -37,5 +39,3 @@ prevBtn.addEventListener("click", function () {
 
     movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
 }); 
-
-prevBtn.style.display = "none";

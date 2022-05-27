@@ -10,7 +10,7 @@ const favourites = existingFavs();
 navOpenClos()
 
 if (favourites.length === 0) {
-    message.innerHTML = `<h2 class="h2-favouritest-us">Choose your favourites from Posts page!</h2>` 
+    message.innerHTML = `<h2 class="h2-favouritest-us">Choose your favourites from Posts page!</h2>`;
     loading.classList.remove("loading");
 } 
 

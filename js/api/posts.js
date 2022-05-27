@@ -18,8 +18,7 @@ async function getPost(url) {
         allPosts(post)
     } 
     catch(error) {
-        message.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`
-       console.log(error)
+        message.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`;
     }
 };
 

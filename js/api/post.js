@@ -19,7 +19,7 @@ async function singlePost(url) {
         showImages(post)
     } 
     catch(error) {
-        postContainer.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`
+        postContainer.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`;
     }
 };
 
@@ -46,11 +46,11 @@ function createHtml(post) {
                                 </div>`;
 };
 
-/* pop image onclick funvtion using outerHTML property */
+/* pop image onclick function using outerHTML property */
 
 const popup = document.querySelector(".popup-images");
 const popImages = document.querySelector(".pop-image");
-const close = document.querySelector(".close-images"); 
+const close = document.querySelector(".close-images");
 
 function showImages() {
     const img = document.querySelectorAll(".single-post img");

@@ -68,7 +68,7 @@ async function getAboutInfo(url) {
                                     </div>`; 
     } 
     catch(error) {
-       aboutContainer.innerHTML =  `<p>We thank you for your patience while we are working to correct the problem</p>`
+       aboutContainer.innerHTML =  `<p>We thank you for your patience while we are working to correct the problem</p>`;
     }
 };
 
