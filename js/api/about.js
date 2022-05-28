@@ -32,4 +32,4 @@ async function getAboutInfo(url) {
     }
 };
 
-getAboutInfo(aboutUrl)
+getAboutInfo(aboutUrl);

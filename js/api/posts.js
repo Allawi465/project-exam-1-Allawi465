@@ -7,7 +7,9 @@ const message = document.querySelector(".post-container");
 /* hamburger menu dropdown navbar */
 navOpenClos()
 
-const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=10";
+const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&page=1";
+
+const ShowMoreUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&page=2";
 
 async function getPost(url) {
     try {
@@ -15,7 +17,7 @@ async function getPost(url) {
         
         const post = await response.json();
 
-        allPosts(post)
+        createHtml(post)
     } 
     catch(error) {
         message.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`;
@@ -24,7 +26,7 @@ async function getPost(url) {
 
 getPost(wpUrl)
 
-function allPosts(post) {
+function createHtml(post) {
 
     loading.classList.remove("loading");
 
@@ -98,7 +100,7 @@ function favouritesAdd() {
             saveFavs(newfavourites);
         }
     } 
-}
+};
 
 /* search button onclick */
 
@@ -112,6 +114,7 @@ searchButton.onclick = function() {
     allPost.innerHTML = "";
     loading.classList.add("loading");
     getPost(newurl)
+    showMoreBtn.style.display = "none";
 }; 
 
 /* search Input keyup making the Enter key active and if the search field empty get the old url */
@@ -124,33 +127,22 @@ searchInput.addEventListener("keyup", function(event) {
         allPost.innerHTML = "";
         loading.classList.add("loading");
         getPost(wpUrl)  
+        showMoreBtn.style.display = "block";
     }
 });
 
 /* show more button getting per page */
 
 const showMoreBtn = document.querySelector(".show-more-btn");
-const newUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
 
 showMoreBtn.onclick = function(event) {
     event.preventDefault();
     if (showMoreBtn.innerHTML === "Show More") {
-        allPost.innerHTML = "";
-        loading.classList.add("loading");
         showMoreBtn.innerHTML = "Show Less"
-        getPost(newUrl)
-        scrollToBottom()
+        getPost(ShowMoreUrl)
     } else {
         allPost.innerHTML = "";
         showMoreBtn.innerHTML = "Show More"
         getPost(wpUrl)
     }
-};
-
-/* show more button scrollto */
-
-function scrollToBottom() {
-    setTimeout(function(){
-            window.scrollTo(0, document.body.scrollHeight);
-        }, 700);
 };
