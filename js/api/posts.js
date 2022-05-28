@@ -3,12 +3,7 @@ import { navOpenClos } from "../index.js";
 const allPost = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
 const message = document.querySelector(".post-container");
-
-/* hamburger menu dropdown navbar */
-navOpenClos()
-
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&page=1";
-
 const ShowMoreUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&page=2";
 
 async function getPost(url) {
@@ -102,6 +97,20 @@ function favouritesAdd() {
     } 
 };
 
+/* show more button getting per page */
+
+const showMoreBtn = document.querySelector(".show-more-btn");
+
+showMoreBtn.onclick = function(event) {
+    event.preventDefault();
+    if (showMoreBtn.innerHTML === "Show More") {
+        getPost(ShowMoreUrl)
+        showMoreBtn.style.display = "none";
+    } else {
+        
+    }
+};
+
 /* search button onclick */
 
 const searchButton = document.querySelector(".search-btn")
@@ -131,14 +140,5 @@ searchInput.addEventListener("keyup", function(event) {
     }
 });
 
-/* show more button getting per page */
-
-const showMoreBtn = document.querySelector(".show-more-btn");
-
-showMoreBtn.onclick = function(event) {
-    event.preventDefault();
-    if (showMoreBtn.innerHTML === "Show More") {
-        getPost(ShowMoreUrl)
-        showMoreBtn.style.display = "none";
-    }
-};
+/* hamburger menu dropdown navbar */
+navOpenClos()

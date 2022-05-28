@@ -6,18 +6,15 @@ const subject = document.querySelector("#subject");
 const messageBox = document.querySelector("#message");
 const message = document.querySelector("#formMessage");
 
-/* hamburger menu dropdown navbar */
-navOpenClos()
-
 /* Post the data to wordprss */
 
 form.addEventListener("submit", formSetup);
 
-const formUrl = "http://localhost/blog-travel/wp-json/contact-form-7/v1/contact-forms/103/feedback";
+const formUrl = "https://wildflowerpower.site/blog-travel/wp-json/contact-form-7/v1/contact-forms/103/feedback";
 
 async function contactForm (event) {
 
-    var formInfo = new FormData(form);
+    const formInfo = new FormData(form);
     
     const body = JSON.stringify({
         "your-name": yourname.value,
@@ -84,3 +81,6 @@ function confirmEmail(email) {
     const confirmingMatches = regExEmail.test(email);
     return confirmingMatches;
 } 
+
+/* hamburger menu dropdown navbar */
+navOpenClos()

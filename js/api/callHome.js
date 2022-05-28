@@ -1,12 +1,9 @@
 import { navOpenClos } from "../index.js";
+import { acticeCarousel } from "../carousel/slider.js";
 const postontainer = document.querySelector(".card-slider");
 const loading = document.querySelector(".loading");
 const message = document.querySelector(".inner-slider");
-
-/* hamburger menu dropdown navbar */
-navOpenClos()
-
-const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=100";
+const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
 
 async function getPost(url) {
     try {
@@ -14,16 +11,16 @@ async function getPost(url) {
         
         const posts = await response.json();
 
-        getPosts(posts)
+        greateHtml(posts);
     } 
     catch(error) {
-        message.innerHTML =  `<p class="apiError"> We thank you for your patience while we are working to correct the problem</p>`
+        message.innerHTML =  `<p class="apiError"> We thank you for your patience while we are working to correct the problem</p>`;
     }
 };
 
 getPost(wpUrl)
 
-function getPosts(posts) {
+function greateHtml(posts) {
 
     loading.classList.remove("loading");
 
@@ -73,3 +70,9 @@ async function getAboutInfo(url) {
 };
 
 getAboutInfo(aboutUrl);
+
+/* hamburger menu dropdown navbar */
+navOpenClos();
+
+/* Caoursel function from export  */
+acticeCarousel();

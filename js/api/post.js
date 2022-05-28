@@ -3,10 +3,6 @@ const postContainer = document.querySelector(".single-post");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-
-/* hamburger menu dropdown navbar */
-navOpenClos()
-
 const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
 
 async function singlePost(url) {
@@ -72,3 +68,6 @@ close.onclick = () => {
 popup.onclick = () => {
     popup.style.display = "none";
 };
+
+/* hamburger menu dropdown navbar */
+navOpenClos()

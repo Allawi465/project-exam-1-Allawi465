@@ -1,3 +1,4 @@
+export function acticeCarousel() {
 const slider = document.querySelector(".slider-container");
 const movingCard = document.querySelector(".card-slider");
 const prevBtn = document.querySelector(".pre-btn");
@@ -12,7 +13,7 @@ let counter = 0;
 
 window.addEventListener("resize", function(e) {
     e.preventDefault();
-    widthCard = slider.offsetWidth
+    widthCard = slider.offsetWidth;
 });
 
 /* scroll right button slider */
@@ -24,7 +25,7 @@ nextBtn.addEventListener("click", function () {
     movingCard.style.transform = "translateX(" + counter * -widthCard + "px)";
     if  (movingCard.offsetWidth - (counter * widthCard) <  widthCard) {
         nextBtn.style.display = "none";
-    } 
+    };
 });
 
 /* scroll left button slider */
@@ -39,3 +40,4 @@ prevBtn.addEventListener("click", function () {
 
     movingCard.style.transform = "translateX(" + counter * -widthCard + "px)"
 }); 
+};

@@ -432,6 +432,11 @@ img:-moz-loading {
 
 /* All Posts page style  */
 
+.search_wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .search-container {
     max-width: 450px;
     margin: 20px auto;
