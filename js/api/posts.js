@@ -138,11 +138,7 @@ const showMoreBtn = document.querySelector(".show-more-btn");
 showMoreBtn.onclick = function(event) {
     event.preventDefault();
     if (showMoreBtn.innerHTML === "Show More") {
-        showMoreBtn.innerHTML = "Show Less"
         getPost(ShowMoreUrl)
-    } else {
-        allPost.innerHTML = "";
-        showMoreBtn.innerHTML = "Show More"
-        getPost(wpUrl)
+        showMoreBtn.style.display = "none";
     }
 };
