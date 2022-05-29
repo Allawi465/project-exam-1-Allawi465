@@ -10,7 +10,7 @@ const message = document.querySelector("#formMessage");
 
 form.addEventListener("submit", formSetup);
 
-const formUrl = "https://wildflowerpower.site/blog-travel/wp-json/contact-form-7/v1/contact-forms/103/feedback";
+const formUrl = "https://wildflowerpower.site/blog/wp-json/contact-form-7/v1/contact-forms/103/feedback";
 
 async function contactForm (event) {
 

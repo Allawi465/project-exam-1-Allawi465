@@ -3,7 +3,7 @@ import { acticeCarousel } from "../carousel/slider.js";
 const postontainer = document.querySelector(".card-slider");
 const loading = document.querySelector(".loading");
 const message = document.querySelector(".inner-slider");
-const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
+const wpUrl = "https://wildflowerpower.site/blog/wp-json/wp/v2/destinations?acf_format=standard&per_page=12";
 
 async function getPost(url) {
     try {
@@ -44,7 +44,7 @@ function greateHtml(posts) {
 /* call api to get about post page to index.html */
 
 const aboutContainer = document.querySelector(".about-container");
-const aboutUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/about/132?acf_format=standard";
+const aboutUrl = "https://wildflowerpower.site/blog/wp-json/wp/v2/about/132?acf_format=standard";
 
 async function getAboutInfo(url) {
     try {

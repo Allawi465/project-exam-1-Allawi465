@@ -3,8 +3,8 @@ import { navOpenClos } from "../index.js";
 const allPost = document.querySelector(".all-post");
 const loading = document.querySelector(".loading");
 const message = document.querySelector(".post-container");
-const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&page=1";
-const ShowMoreUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations?acf_format=standard&page=2";
+const wpUrl = "https://wildflowerpower.site/blog/wp-json/wp/v2/destinations?acf_format=standard&page=1";
+const ShowMoreUrl = "https://wildflowerpower.site/blog/wp-json/wp/v2/destinations?acf_format=standard&page=2";
 
 async function getPost(url) {
     try {
@@ -115,7 +115,7 @@ showMoreBtn.onclick = function(event) {
 
 const searchButton = document.querySelector(".search-btn")
 const searchInput = document.querySelector("#search");
-const searchUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations";
+const searchUrl = "https://wildflowerpower.site/blog/wp-json/wp/v2/destinations";
 
 searchButton.onclick = function() {
     const searchInput = document.querySelector("#search").value;

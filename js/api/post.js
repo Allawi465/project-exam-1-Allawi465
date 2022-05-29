@@ -3,7 +3,7 @@ const postContainer = document.querySelector(".single-post");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const wpUrl = "https://wildflowerpower.site/blog-travel/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
+const wpUrl = "https://wildflowerpower.site/blog/wp-json/wp/v2/destinations/" + id + "?acf_format=standard";
 
 async function singlePost(url) {
     try {
