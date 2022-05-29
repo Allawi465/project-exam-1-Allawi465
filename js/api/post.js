@@ -23,7 +23,7 @@ singlePost(wpUrl)
 
 function createHtml(post) {
 
-    postContainer.innerHTML =  `<h2 class="single-post-h2">Destination | ${post.title.rendered} </h2>
+    postContainer.innerHTML =  `<h1 class="single-post-h2">Destination | ${post.title.rendered} </h1>
                                 <div class="single-post-container">
                                     <div class="single-img">
                                         <img src="${post.acf.FeaturedImage.url}" class="post-images" alt="${post.acf.FeaturedImage.alt}" id="images">
