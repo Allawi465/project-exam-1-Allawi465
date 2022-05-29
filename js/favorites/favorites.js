@@ -28,4 +28,4 @@ favourites.forEach(favourite => {
 });
 
 /* hamburger menu dropdown navbar */
-navOpenClos()
+navOpenClos();

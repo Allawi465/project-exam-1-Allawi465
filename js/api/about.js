@@ -31,4 +31,4 @@ async function getAboutInfo(url) {
 getAboutInfo(aboutUrl);
 
 /* hamburger menu dropdown navbar */
-navOpenClos()
+navOpenClos();

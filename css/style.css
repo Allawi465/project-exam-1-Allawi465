@@ -533,16 +533,6 @@ img:-moz-loading {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-.single-post-h2 {
-    display: flex;
-    font-weight: 300;
-    font-size: 20px;
-    padding: 1rem;
-    justify-content: center;
-    text-transform: uppercase;
-    margin-bottom: 35px;
-}
-
 .h3-single-post {
     text-align: center;
     font-weight: 300;
@@ -815,7 +805,7 @@ footer {
 
     /* carousel style  */
     
-    .post-h2, .single-post-h2 { 
+    .post-h2 { 
         font-size: 22px;
     }
 
@@ -987,7 +977,7 @@ footer {
     }
 
     .nav_link:hover, .footer_link:hover {
-        color: #2A0B0B;
+        color: #712A11;
     }
 
     .arrows button:hover {
@@ -1007,7 +997,7 @@ footer {
     width: 20px;
     height: 20px;
     animation: spin 1s linear infinite;
-    margin: auto;
+    margin: 30px auto;
   }
   
   @keyframes spin {

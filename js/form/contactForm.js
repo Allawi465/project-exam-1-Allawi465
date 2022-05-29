@@ -83,4 +83,4 @@ function confirmEmail(email) {
 } 
 
 /* hamburger menu dropdown navbar */
-navOpenClos()
+navOpenClos();

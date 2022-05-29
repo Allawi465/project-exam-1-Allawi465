@@ -6,8 +6,8 @@ export function existingFavs() {
     } else {
         return JSON.parse(favs);
     }
-}
+};
 
 export function saveFavs(favs) {
     localStorage.setItem("favourites", JSON.stringify(favs))
-}
+};

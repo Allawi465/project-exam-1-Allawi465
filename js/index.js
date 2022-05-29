@@ -7,7 +7,7 @@
         nav.classList.toggle("aktiv");
         hamburger.classList.toggle("burger");
         header.classList.toggle("headerHeight");    
-    })
+    });
     
     window.addEventListener("resize", function() {
         if (window.innerWidth > 1082) {

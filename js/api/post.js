@@ -11,25 +11,25 @@ async function singlePost(url) {
         
         const post = await response.json();
 
-        createHtml(post)
-        showImages(post)
+        createHtml(post);
+        showImages(post);
     } 
     catch(error) {
         postContainer.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`;
     }
 };
 
-singlePost(wpUrl)
+singlePost(wpUrl);
 
 function createHtml(post) {
 
-    postContainer.innerHTML =  `<h1 class="single-post-h2">Destination | ${post.title.rendered} </h1>
+    postContainer.innerHTML =  `<h1 class="home-h1">Destination | ${post.title.rendered} </h1>
                                 <div class="single-post-container">
                                     <div class="single-img">
                                         <img src="${post.acf.FeaturedImage.url}" class="post-images" alt="${post.acf.FeaturedImage.alt}" id="images">
                                     </div>
                                     <div class="single-post-text">
-                                        <h3 class="h3-single-post">${post.acf.paragraph2}</h3>
+                                        <h2 class="h3-single-post">${post.acf.paragraph2}</h2>
                                         <p class="p-single-post">${post.acf.Text}</p>
                                         <p class="p-single-post">${post.acf.moretext}</p>
                                         <div class="view-btn-single">
@@ -70,4 +70,4 @@ popup.onclick = () => {
 };
 
 /* hamburger menu dropdown navbar */
-navOpenClos()
+navOpenClos();

@@ -12,14 +12,14 @@ async function getPost(url) {
         
         const post = await response.json();
 
-        createHtml(post)
+        createHtml(post);
     } 
     catch(error) {
         message.innerHTML =  `<p class="apiError">We thank you for your patience while we are working to correct the problem</p>`;
     }
 };
 
-getPost(wpUrl)
+getPost(wpUrl);
 
 function createHtml(post) {
 
@@ -59,7 +59,7 @@ function createHtml(post) {
                                     </div>`;
     }
     
-    favouritesAdd()
+    favouritesAdd();
 };
 
 /* add to favorite function */
@@ -71,7 +71,7 @@ function favouritesAdd() {
         button.addEventListener("click", handleClick);
     });
     
-    function handleClick() {;
+    function handleClick() {
         this.classList.toggle("fa");
         this.classList.toggle("far")
         const name = this.dataset.name;
@@ -141,4 +141,4 @@ searchInput.addEventListener("keyup", function(event) {
 });
 
 /* hamburger menu dropdown navbar */
-navOpenClos()
+navOpenClos();
