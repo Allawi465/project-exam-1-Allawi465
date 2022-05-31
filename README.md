@@ -58,6 +58,6 @@ I am very grateful for the feedbacks and the support.
 
 Please contact me if you have any questions!
 
-[Community Science Museum](https://traevelit.netlify.app/index.html)
+[Explore It](https://traevelit.netlify.app/index.html)
 
 [My LinkedIn page](https://www.linkedin.com/in/mohammed-allawi-89830621a/)
