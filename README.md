@@ -1,67 +1,63 @@
-## Project Exam 1
+# Explore It
+![Skjermbilde (25)](https://user-images.githubusercontent.com/91701833/171228903-70573d41-22c4-4b96-873e-8997521c1cf3.png)
 
-## Goal
+## Description
 
-To put into practice the skills learned over your first year of studies.
+This project was to crate a blog site with the skills I learned over the first year of studies at Noroff.
 
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
--	Home page
--	About page
--	List of blog card
--	Blog post specific pages
--	Contact page.
+The blog site is about my travel experiences around the world. The blog site gives tips and recommendations on different 
+destinations around europe and asia. 
 
-### Home Page
-The home page should have a ‘Latest card’ section which uses a carousel (slider) for users to click to view more card. For example, by default the user can see four card, then they can click an arrow on the right to view the next four card, and click it again to view the next four card. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+The blog site retrieving content from the REST API, Wordpress. 
 
-### Blog Page
+This is a Project Exam 1 final delivery. 
 
-The blog card page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+## Built With
 
-### Blog Specific Page
+The project was just build with
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+- HTML 
+- CSS
+- javaScript
+- Rest Api, Wordpress
 
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+## Getting Started
 
-### Contact page
+### Installing
 
-Create a contact us page, there should be 4 textboxes on this page.
--	Name (Should be more than 5 characters long)
--	Email address (Must be a valid email address)
--	Subject (Should be more than 15 characters long)
--	Message content (Should be more than 25 characters long)
+Feel free to clone the project
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+1. Clone the repo:
 
-### WordPress
+```bash
+https://github.com/Noroff-FEU-Assignments/project-exam-1-Allawi465
+```
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
+2. Install the dependencies:
 
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
+```
+npm install
+```
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
+### Running
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
+To run the app, run the following commands:
 
-## Level 1 Process
+```bash
+npm run start
+```
 
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
+## Contributing
 
-1.	You can try adding a sort, filter, or search to the blog card page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
+If you have a suggestion that would make the site better, please fork the repo and create a pull request.
+Don't forget to give the project a star! Thanks again!
 
+## Contact
+
+I am very grateful for the feedbacks and the support. 
+
+Please contact me if you have any questions!
+
+[Community Science Museum](https://traevelit.netlify.app/index.html)
+
+[My LinkedIn page](https://www.linkedin.com/in/mohammed-allawi-89830621a/)
