@@ -7,9 +7,9 @@ This project was to crate a blog site with the skills I learned over the first y
 
 The blog site is about my travel experiences around the world. 
 
-The blog site gives tips and recommendations on different destinations around europe and asia. 
+The ide was to gives tips and recommendations on different destinations I have visit around europe and asia. 
 
-The blog site retrieving content from the REST API, Wordpress. 
+The site is retrieving content from the REST API, Wordpress. 
 
 This is a Project Exam 1 final delivery. 
 
