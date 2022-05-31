@@ -5,8 +5,9 @@
 
 This project was to crate a blog site with the skills I learned over the first year of studies at Noroff.
 
-The blog site is about my travel experiences around the world. The blog site gives tips and recommendations on different 
-destinations around europe and asia. 
+The blog site is about my travel experiences around the world. 
+
+The blog site gives tips and recommendations on different destinations around europe and asia. 
 
 The blog site retrieving content from the REST API, Wordpress. 
 
@@ -50,6 +51,7 @@ npm run start
 ## Contributing
 
 If you have a suggestion that would make the site better, please contact me.
+
 Don't forget to give the project a star! Thanks again!
 
 ## Contact
